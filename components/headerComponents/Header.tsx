@@ -9,21 +9,24 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@heroui/react";
 
-
 const Header: React.FC<any> = () => {
   const router = useRouter();
 
-  const inputWrapperStyle = "border border-[#F0F0F0] focus-within:border-blue-500 rounded-md cursor-pointer";
+  const inputWrapperStyle =
+    "border border-[#F0F0F0] focus-within:border-blue-500 rounded-md cursor-pointer";
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleClear = () => {
     setSearchTerm("");
   };
 
+  const go = (path: string) => router.push(path);
+
   return (
     <header className="sticky top-0 z-50 w-full bg-white shadow-sm border-b border-gray-200 text-[#1C1F25]">
       <div className="bg-[#151515] text-[0.875rem] text-white flex justify-center py-[0.75rem]">
-        Exclusive Offer: Enjoy Complimentary Engraving and Worldwide Shipping on All Orders | Limited Time Only!
+        Exclusive Offer: Enjoy Complimentary Engraving and Worldwide Shipping on
+        All Orders | Limited Time Only!
       </div>
 
       <div className="pt-[1.813rem] pb-[1rem]">
@@ -32,7 +35,6 @@ const Header: React.FC<any> = () => {
             {/* Search input */}
             <div>
               <div className="relative w-[15.938rem] max-w-sm">
-
                 <div className="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer">
                   {searchTerm ? (
                     <button
@@ -62,9 +64,7 @@ const Header: React.FC<any> = () => {
             </div>
 
             <div className="flex flex-row items-center gap-[1.25rem]">
-              <div className="text-[#151515]">
-                Cart (0)
-              </div>
+              <div className="text-[#151515]">Cart (0)</div>
 
               <Button className="rounded flex items-center justify-center bg-[#F9FAFB] flex-1 border-1 border-[#151515] rounded-[2.5rem] bg-transparent px-[2rem] py-[0.5rem] text-[#151515]">
                 Sign up
@@ -74,39 +74,42 @@ const Header: React.FC<any> = () => {
 
           <div className="flex flex-row justify-center items-center">
             <div className="text-[#151515] gap-[1.25rem] flex flex-row pt-4">
-              <div>
+              <div onClick={() => go("/")} className="cursor-pointer">
                 Home
               </div>
 
-              <div>
+              <div onClick={() => go("/shop")} className="cursor-pointer">
                 Shop
               </div>
 
-              <div>
+              <div onClick={() => go("/collections")} className="cursor-pointer">
                 Collections
               </div>
 
-              <div>
+              <div onClick={() => go("/gems-of-the-world")} className="cursor-pointer">
                 Gems of the World
               </div>
 
-              <div>
+              <div onClick={() => go("/signature-collection")} className="cursor-pointer">
                 Signature Collection
               </div>
 
-              <div>
+              <div
+                onClick={() => go("/engagement-collections")}
+                className="cursor-pointer"
+              >
                 Engagement Collections
               </div>
 
-              <div>
+              <div onClick={() => go("/blog")} className="cursor-pointer">
                 Blog
               </div>
 
-              <div>
+              <div onClick={() => go("/aboutUs")} className="cursor-pointer">
                 About Us
               </div>
 
-              <div>
+              <div onClick={() => go("/contact-us")} className="cursor-pointer">
                 Contact Us
               </div>
             </div>
