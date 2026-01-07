@@ -2,7 +2,7 @@ import { Button, Input } from "@heroui/react";
 import Image from "next/image";
 import React from "react";
 
-const Footer = ({ showPoweredBy = false }) => {
+const Footer = () => {
   return (
     <div className="w-full flex flex-col justify-center items-center px-[5px]">
       <div className="max-w-7xl w-full pt-[3rem] sm:pt-[1rem] pb-[2rem] grid grid-cols-2 md:grid-cols-1 gap-y-[3rem] gap-x-[1rem]">

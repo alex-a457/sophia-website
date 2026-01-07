@@ -333,7 +333,7 @@ export default function Page() {
 
                   />
 
-                  <div className="absolute top-[0.75rem] right-[0.75rem] rounded-full border-1 border-[#AEAEAE] p-[0.75rem] cursor-pointer" onClick={() => toggleLike(product.id)}>
+                  <div role="button" tabIndex={0} onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggleLike(product.id); } }} className="absolute top-[0.75rem] right-[0.75rem] rounded-full border-1 border-[#AEAEAE] p-[0.75rem] cursor-pointer" onClick={() => toggleLike(product.id)}>
                     <svg
                       width="24"
                       height="24"
@@ -392,10 +392,12 @@ export default function Page() {
       {/* 3. Watch ur live stream */}
       <div className="max-w-7xl mx-auto flex flex-col items-center mb-[6.25rem] md:mb-[3rem]">
         <div className="relative mb-[1.5rem] px-[5px]"> {/* height must */}
-          <img
+          <Image
             src="/upscale-image.png"
             alt="Banner"
-            className="rounded-[0.75rem] w-full"
+            width={1200}
+            height={675}
+            className="rounded-[0.75rem] w-full h-auto"
           />
         </div>
 
@@ -468,6 +470,9 @@ export default function Page() {
 
                   {/* Like icon (always visible) */}
                   <div
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); latestCreationToggleLike(product.id); } }}
                     className="absolute top-[0.75rem] right-[0.75rem] rounded-full border border-[#AEAEAE] p-[0.75rem] cursor-pointer z-10 backdrop-blur-md"
                     onClick={() => latestCreationToggleLike(product.id)}
                   >
@@ -561,8 +566,8 @@ export default function Page() {
 
         <div className="grid grid-cols-4 xl:grid-cols-3 lg:grid-cols-2 sm:!grid-cols-1 justify-items-center gap-[1.25rem]">
           {perfectMatch.map((item: any) => (
-            <div>
-              <div key={item.name} className="h-[21.25rem] w-[19.063rem] relative mb-[1.5rem]">
+            <div key={item.name}>
+              <div className="h-[21.25rem] w-[19.063rem] relative mb-[1.5rem]">
                 <Image
                   src={item.image}
                   alt="latest-creation"
@@ -609,7 +614,7 @@ export default function Page() {
         </div>
       </div>
 
-      <Footer showPoweredBy={true} />
+      <Footer />
     </div>
   );
 }

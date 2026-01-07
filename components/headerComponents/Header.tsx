@@ -129,7 +129,7 @@ const Header = () => {
                     key={item}
                     className="relative py-2 cursor-pointer group"
                   >
-                    <span className="absolute left-0 top-0 h-full w-[2px] bg-transparent group-hover:bg-[#151515] transition-all"></span>
+                    <span className="absolute left-0 top-0 h-full w-[2px] bg-transparent group-hover:bg-[#151515] transition-all" />
                     {item}
                   </div>
                 ))}
