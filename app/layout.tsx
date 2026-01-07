@@ -3,9 +3,10 @@ import { Metadata, Viewport } from "next";
 import clsx from "clsx";
 
 import { Providers } from "./providers";
-
 import { siteConfig } from "@/config/site";
-import { fontSans } from "@/config/fonts";
+
+import { Playfair_Display } from "next/font/google";
+import localFont from "next/font/local";
 
 export const metadata: Metadata = {
   title: {
@@ -25,6 +26,33 @@ export const viewport: Viewport = {
   ],
 };
 
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-playfair",
+});
+
+const switzer = localFont({
+  src: [
+    {
+      path: "../public/fonts/switzer/Switzer-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/switzer/Switzer-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../public/fonts/switzer/Switzer-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-switzer", // ✅ THIS WAS MISSING
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -32,16 +60,14 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en">
-      <head />
       <body
         className={clsx(
-          "min-h-screen text-black bg-white font-sans antialiased",
-          fontSans.variable,
+          "min-h-screen text-black bg-white antialiased",
+          switzer.variable,
+          playfair.variable
         )}
       >
-        <Providers>
-          {children}
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

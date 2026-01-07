@@ -1,110 +1,157 @@
+import { Button, Input } from "@heroui/react";
+import Image from "next/image";
 import React from "react";
 
-const Footer = ({ showPoweredBy = false }) => {
+const Footer = () => {
   return (
-    <div className="w-full bg-black flex flex-col justify-center items-center">
-      <div className="grid grid-cols-[1fr_1fr_1fr_auto] max-w-7xl w-full pt-[3rem] pb-[2rem]">
-        {/* 1st col */}
-        <div>
+    <div className="w-full flex flex-col justify-center items-center px-[5px]">
+      <div className="max-w-7xl w-full pt-[3rem] sm:pt-[1rem] pb-[2rem] grid grid-cols-2 md:grid-cols-1 gap-y-[3rem] gap-x-[1rem]">
+        <div className="max-w-[34rem] text-center">
+          <h2 className="text-[3rem] font-medium text-[#151515] md:text-[2.5rem]">
+            Exclusive Holiday Offer
+          </h2>
+
+          <div className="text-center text-[#AEAEAE] mb-[1.5rem]">
+            Get ready to shine this season with our special holiday discount! For a limited time, enjoy 25 % off on selected jewelry pieces.
+          </div>
+
+          <div className="flex flex-row gap-[0.25rem]">
+            <Input
+              type="email"
+              variant="bordered"
+              radius="full"
+              placeholder="Enter your email"
+              classNames={{
+                inputWrapper: "border border-[#AEAEAE] hover:border-[#AEAEAE] focus-within:border-[#AEAEAE] h-[2.938rem]",
+                input: "placeholder:text-[#AEAEAE] text-base",
+              }}
+            />
+
+            <Button className="rounded-full bg-[#151515] font-semibold text-white h-[2.938rem]">
+              Submit
+            </Button>
+          </div>
+
+        </div>
+
+        <div className="flex flex-wrap flex-row gap-[2.375rem] md:gap-[2rem]">
+          {/* 2nd col */}
           <div>
-            <img src="/footer/white-connexion.svg" alt="Connexion Logo" />
-            {showPoweredBy && (
-              <img
-                src="/footer/powered-by.svg"
-                className="mt-[0.6rem]"
-                alt="Powered By"
-              />
-            )}
-          </div>
+            <h2 className="text-[1.5rem] font-semibold mb-[1.5rem] text-[#151515]">
+              Contact Information
+            </h2>
 
-          <div className="flex flex-col gap-4 text-white text-[0.82rem] mt-12">
-            <div className="flex items-center gap-2">
-              <img src="/footer/Phone.svg" alt="Phone Icon" />
-              <a href="tel:9999999999" className="hover:underline">
-                Give us a call 999-999-9999
-              </a>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <img src="/footer/mail.svg" alt="Mail Icon" />
-              <a
-                href="mailto:support@lbxmarketplace.com"
-                className="hover:underline"
-              >
-                support@lbxmarketplace.com
-              </a>
+            <div className="text-[1.125rem] text-[#AEAEAE]">
+              <button className="text-left hover:underline focus:underline focus:outline-none cursor-pointer">
+                Sophia Fiori Jewelry<br />
+                1234 Elegance Avenue,<br />
+                Suite 567, <br />
+                Diamond District, <br />
+                City of Lux, 12345<br />
+                United States
+              </button>
             </div>
           </div>
-        </div>
 
-        {/* 2nd col */}
-        <div className="text-white">
-          <div className="text-[1.5rem]">Product Catalog</div>
+          {/* 3rd col */}
+          <div>
+            <h2 className="text-[1.5rem] font-semibold mb-[1.5rem] text-[#151515]">
+              Shop
+            </h2>
 
-          <div className="flex flex-col gap-2 mt-6 text-[0.83rem]">
-            <button className="text-left hover:underline focus:underline focus:outline-none">
-              Watch
-            </button>
-            <button className="text-left hover:underline focus:underline focus:outline-none">
-              Coins
-            </button>
-            <button className="text-left hover:underline focus:underline focus:outline-none">
-              Jewelry
-            </button>
+            <div className="flex flex-col gap-2 text-[1.125rem] text-[#AEAEAE]">
+              <button className="text-left hover:underline focus:underline focus:outline-none crusor-pointer">
+                Rings
+              </button>
+              <button className="text-left hover:underline focus:underline focus:outline-none crusor-pointer">
+                Necklaces
+              </button>
+              <button className="text-left hover:underline focus:underline focus:outline-none crusor-pointer">
+                Bracelets
+              </button>
+              <button className="text-left hover:underline focus:underline focus:outline-none crusor-pointer">
+                Earrings
+              </button>
+            </div>
           </div>
-        </div>
 
-        {/* 3rd col */}
-        <div className="text-white">
-          <div className="text-[1.5rem]">Company</div>
+          {/* 4th col */}
+          <div>
+            <h2 className="text-[1.5rem] font-semibold mb-[1.5rem] text-[#151515]">
+              Customer Service
+            </h2>
 
-          <div className="flex flex-col gap-2 mt-6 text-[0.83rem]">
-            <button className="text-left hover:underline focus:underline focus:outline-none">
-              About Us
-            </button>
-            <button className="text-left hover:underline focus:underline focus:outline-none">
-              FAQs
-            </button>
-            <button className="text-left hover:underline focus:underline focus:outline-none">
-              Newsletter
-            </button>
-          </div>
-        </div>
-
-        {/* 4th col */}
-        <div className="text-white w-fit">
-          <div className="text-[1.5rem]">Info</div>
-
-          <div className="flex flex-col gap-2 mt-6 text-[0.83rem]">
-            <button className="text-left hover:underline focus:underline focus:outline-none">
-              Terms &amp; Conditions
-            </button>
-            <button className="text-left hover:underline focus:underline focus:outline-none">
-              Privacy Policy
-            </button>
-            <button className="text-left hover:underline focus:underline focus:outline-none">
-              Shipping Policy
-            </button>
+            <div className="flex flex-col gap-2 text-[1.125rem] text-[#AEAEAE]">
+              <button className="text-left hover:underline focus:underline focus:outline-none crusor-pointer">
+                FAQ
+              </button>
+              <button className="text-left hover:underline focus:underline focus:outline-none crusor-pointer">
+                Shipping & Returns
+              </button>
+              <button className="text-left hover:underline focus:underline focus:outline-none crusor-pointer">
+                Contact Us
+              </button>
+              <button className="text-left hover:underline focus:underline focus:outline-none crusor-pointer">
+                Craftsmanship
+              </button>
+              <button className="text-left hover:underline focus:underline focus:outline-none crusor-pointer">
+                Sustainability
+              </button>
+            </div>
           </div>
         </div>
       </div>
 
-      <div className="max-w-7xl border-b border-[#4B5563] w-full" />
+      <div className="max-w-7xl border-b border-[#151515] w-full opacity-10" />
 
-      <div className="w-full max-w-7xl text-white my-8 flex justify-between items-center">
-        <div>© 2016-2025 LBX Marketplace. All rights reserved.</div>
+      <div className="w-full max-w-7xl text-white my-8 flex flex-wrap justify-between items-center lg:gap-y-[2rem]">
+        <div className="flex flex-wrap flex-row gap-[0.25rem]">
+          <div className="w-[3rem] h-[3rem] relative">
+            <Image
+              src="/footer/insta-button.svg"
+              alt="instagram"
+              fill
+            />
+          </div>
 
-        <div className="flex items-center gap-10">
-          <div className="flex items-center gap-4">
-            <button className="cursor-pointer">
-              <img src="/footer/x.svg" alt="X (Twitter)" />
-            </button>
-            <button className="cursor-pointer">
-              <img src="/footer/FacebookLogo.svg" alt="Facebook" />
-            </button>
-            <button className="cursor-pointer">
-              <img src="/footer/InstagramLogo.svg" alt="Instagram" />
-            </button>
+          <div className="w-[3rem] h-[3rem] relative">
+            <Image
+              src="/footer/tiktok-button.svg"
+              alt="tiktok"
+              fill
+            />
+          </div>
+
+          <div className="w-[3rem] h-[3rem] relative">
+            <Image
+              src="/footer/fb-button.svg"
+              alt="facebook"
+              fill
+            />
+          </div>
+
+          <div className="w-[3rem] h-[3rem] relative">
+            <Image
+              src="/footer/x-button.svg"
+              alt="x"
+              fill
+            />
+          </div>
+        </div>
+
+        <div className="relative">
+          <div className="w-[12.563rem] h-[2.5rem]">
+            <Image src="/logo.svg" alt="add-icon" fill />
+          </div>
+        </div>
+
+        <div className="flex flex-wrap flex-row text-[1.125rem] text-[#AEAEAE] gap-[1.5rem]">
+          <div className="cursor-pointer">
+            Privacy Policy
+          </div>
+
+          <div className="cursor-pointer">
+            Terms & Conditions
           </div>
         </div>
       </div>
