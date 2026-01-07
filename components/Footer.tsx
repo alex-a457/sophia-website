@@ -7,9 +7,9 @@ const Footer = ({ showPoweredBy = false }) => {
     <div className="w-full flex flex-col justify-center items-center px-[5px]">
       <div className="max-w-7xl w-full pt-[3rem] sm:pt-[1rem] pb-[2rem] grid grid-cols-2 md:grid-cols-1 gap-y-[3rem] gap-x-[1rem]">
         <div className="max-w-[34rem] text-center">
-          <div className="text-[3rem] font-medium text-[#151515] md:text-[2.5rem]">
+          <h2 className="text-[3rem] font-medium text-[#151515] md:text-[2.5rem]">
             Exclusive Holiday Offer
-          </div>
+          </h2>
 
           <div className="text-center text-[#AEAEAE] mb-[1.5rem]">
             Get ready to shine this season with our special holiday discount! For a limited time, enjoy 25 % off on selected jewelry pieces.
@@ -37,9 +37,9 @@ const Footer = ({ showPoweredBy = false }) => {
         <div className="flex flex-wrap flex-row gap-[2.375rem] md:gap-[2rem]">
           {/* 2nd col */}
           <div>
-            <div className="text-[1.5rem] font-semibold mb-[1.5rem] text-[#151515]">
+            <h2 className="text-[1.5rem] font-semibold mb-[1.5rem] text-[#151515]">
               Contact Information
-            </div>
+            </h2>
 
             <div className="text-[1.125rem] text-[#AEAEAE]">
               <button className="text-left hover:underline focus:underline focus:outline-none cursor-pointer">
@@ -55,9 +55,9 @@ const Footer = ({ showPoweredBy = false }) => {
 
           {/* 3rd col */}
           <div>
-            <div className="text-[1.5rem] font-semibold mb-[1.5rem] text-[#151515]">
+            <h2 className="text-[1.5rem] font-semibold mb-[1.5rem] text-[#151515]">
               Shop
-            </div>
+            </h2>
 
             <div className="flex flex-col gap-2 text-[1.125rem] text-[#AEAEAE]">
               <button className="text-left hover:underline focus:underline focus:outline-none crusor-pointer">
@@ -77,9 +77,9 @@ const Footer = ({ showPoweredBy = false }) => {
 
           {/* 4th col */}
           <div>
-            <div className="text-[1.5rem] font-semibold mb-[1.5rem] text-[#151515]">
+            <h2 className="text-[1.5rem] font-semibold mb-[1.5rem] text-[#151515]">
               Customer Service
-            </div>
+            </h2>
 
             <div className="flex flex-col gap-2 text-[1.125rem] text-[#AEAEAE]">
               <button className="text-left hover:underline focus:underline focus:outline-none crusor-pointer">

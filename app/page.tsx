@@ -16,6 +16,7 @@ import Footer from "@/components/Footer";
 
 import { AnimatePresence } from "framer-motion";
 import Image from "next/image";
+import "@/styles/globals.css";
 
 const slides = [
   {
@@ -308,9 +309,9 @@ export default function Page() {
       {/* 2. Timeless eligance, most loved */}
       <div className="max-w-7xl mx-auto text-center mb-[6.313rem] md:mb-[3.1rem]">
         <div className="text-center mb-[5rem]">
-          <div className="text-[3rem] font-semibold text-[#121212] mb-[1rem] lg:text-[2.5rem]">
+          <h1 className="text-[3rem] font-semibold text-[#121212] mb-[1rem] lg:text-[2.5rem]">
             Timeless Elegance, Most Loved
-          </div>
+          </h1>
 
           <div className="text-[#AEAEAE]">
             Discover our most sought-after jewelry, celebrated for unmatched beauty and craftsmanship.
@@ -361,9 +362,9 @@ export default function Page() {
                   </div>
                 </div>
 
-                <div className="text-[1.5rem] text-[#151515] font-semibold max-w-[18.5rem] truncate">
+                <h2 className="text-[1.5rem] text-[#151515] font-semibold max-w-[18.5rem] truncate">
                   {product.product_name}
-                </div>
+                </h2>
 
                 <div className="font-semibold flex flex-row gap-[0.75rem]">
                   {product.original_price && (
@@ -415,9 +416,9 @@ export default function Page() {
       {/* 4. Latest creations */}
       <div className="max-w-7xl mx-auto text-center mb-[6.313rem]">
         <div className="flex flex-col items-center mb-[3.375rem]">
-          <div className="text-[3rem] text-[#151515] font-medium mb-[1.5rem] lg:text-[2.5rem]">
+          <h1 className="text-[3rem] text-[#151515] font-medium mb-[1.5rem] lg:text-[2.5rem]">
             Our latest creations
-          </div>
+          </h1>
 
           <div className="text-[1.125rem] text-[#AEAEAE] max-w-[59.688rem] text-center md:text-[1rem]">
             Our collections are designed for those who seek perfection in every detail. From radiant diamond rings to breathtaking necklaces, each piece is crafted using the finest materials and techniques.
@@ -498,9 +499,9 @@ export default function Page() {
                   </div>
                 </div>
 
-                <div className="text-[1.5rem] text-[#151515] font-semibold">
+                <h2 className="text-[1.5rem] text-[#151515] font-semibold">
                   {product.product_name}
-                </div>
+                </h2>
 
                 <div className="font-semibold flex flex-row gap-[0.75rem]">
                   <div className="text-[#151515] font-semibold text-[1.125rem]">
@@ -521,7 +522,7 @@ export default function Page() {
 
       {/* 5. Explore our history */}
       <div className="max-w-7xl mx-auto flex flex-col items-center mb-[6.25rem] md:mb-[3rem] px-[5px]">
-        <div className="relative w-full h-[32.625rem] mb-[1.5rem]"> {/* height must */}
+        <div className="relative w-full h-[32.625rem] mb-[1.5rem] rounded-[0.75rem]"> {/* height must */}
           <Image
             src="/upscale-image-2.png"
             alt="Banner"
@@ -530,14 +531,14 @@ export default function Page() {
             priority
           />
 
-          <div className="absolute text-white inset-0 flex flex-col items-center justify-center bg-[#00000052]">
+          <div className="absolute text-white inset-0 flex flex-col items-center justify-center bg-[#00000052] rounded-[0.75rem]">
             <div className="mb-[0.75rem] md:text-[12px]">
               About Lunara
             </div>
 
-            <div className="max-w-[59.688rem] text-center mb-[1.5rem] text-[3rem] font-medium md:text-[1.5rem]">
+            <h2 className="max-w-[59.688rem] text-center mb-[1.5rem] text-[3rem] font-medium md:text-[1.5rem]">
               We believe that jewelry is more than just an accessory it’s a reflection of individuality, emotion, and heritage.
-            </div>
+            </h2>
 
             <div>
               <Button className="text-white border-1 border-white p-[0.75rem] rounded-[2.5rem] backdrop-blur-sm bg-transparent">
@@ -550,9 +551,9 @@ export default function Page() {
 
       {/* 6. Discover your perfect match */}
       <div className="max-w-7xl mx-auto flex flex-col items-center mb-[6.25rem] md:mb-[3rem] px-[5px] text-center">
-        <div className="text-[3rem] text-[#151515] font-medium mb-[1.5rem]">
+        <h1 className="text-[3rem] text-[#151515] font-medium mb-[1.5rem]">
           Discover Your Perfect Match
-        </div>
+        </h1>
 
         <div className="text-[#AEAEAE] mb-[5rem]">
           Explore our curated collections designed to suit every style and occasion.
@@ -570,9 +571,9 @@ export default function Page() {
                 />
               </div>
 
-              <div className="text-[1.75rem] text-[#151515] font-semibold text-center md:text-[1.4rem]">
+              <h3 className="text-[1.75rem] text-[#151515] font-semibold text-center md:text-[1.4rem]">
                 {item.name}
-              </div>
+              </h3>
             </div>
           ))}
         </div>
@@ -580,7 +581,7 @@ export default function Page() {
       </div>
 
       {/* 7. Celebrate the Season with Tanzanite Gems */}
-      <div className="max-w-7xl mx-auto flex flex-col items-center mb-[6.25rem] md:mb-[3rem] px-[5px]">
+      <div className="max-w-7xl mx-auto flex flex-col items-center text-center mb-[6.25rem] md:mb-[3rem] px-[5px]">
         <div className="relative w-full h-[32.625rem] mb-[1.5rem]"> {/* height must */}
           <Image
             src="/celebrate-the-season.png"
@@ -591,9 +592,9 @@ export default function Page() {
           />
 
           <div className="absolute text-white w-full flex flex-col items-center justify-center bg-[#00000052] mt-[7rem] px-[20px]">
-            <div className="mb-[1.25rem] text-[3rem] font-medium md:text-[2rem]">
+            <h2 className="mb-[1.25rem] text-[3rem] font-medium md:text-[2rem]">
               Celebrate the Season with Tanzanite Gems
-            </div>
+            </h2>
 
             <div className="max-w-[59.688rem] text-center mb-[1.5rem]">
               This festive season, we invite you to indulge in the magic of the holidays with our limited-edition Tanzanite Collection. Each piece has been carefully crafted to bring warmth, joy, and a touch of sparkle to your celebrations.
