@@ -1,50 +1,56 @@
 "use client";
+
 import React, { useState } from "react";
-import dynamic from "next/dynamic";
-
-import { FiSearch } from "react-icons/fi";
-import { IoClose } from "react-icons/io5";
-
-import { useRouter } from "next/navigation";
 import Image from "next/image";
 import { Button } from "@heroui/react";
+import { IoClose } from "react-icons/io5";
 
-
-const Header: React.FC<any> = () => {
-  const router = useRouter();
-
-  const inputWrapperStyle = "border border-[#F0F0F0] focus-within:border-blue-500 rounded-md cursor-pointer";
+const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const handleClear = () => {
-    setSearchTerm("");
-  };
+  const menuItems = [
+    "Home",
+    "Shop",
+    "Collections",
+    "Gems of the World",
+    "Signature Collection",
+    "Engagement Collections",
+    "Blog",
+    "About Us",
+    "Contact Us",
+  ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white shadow-sm border-b border-gray-200 text-[#1C1F25]">
-      <div className="bg-[#151515] text-[0.875rem] text-white flex justify-center py-[0.75rem]">
-        Exclusive Offer: Enjoy Complimentary Engraving and Worldwide Shipping on All Orders | Limited Time Only!
+    <header className="sticky top-0 z-50 bg-white border-b border-[#E5E5E5]">
+
+      {/* ================= OFFER BAR ================= */}
+      <div className="bg-[#151515] text-white text-center text-[0.875rem] md:text-[0.75rem] py-3 px-3">
+        Exclusive Offer: Enjoy Complimentary Engraving and Worldwide Shipping on All Orders
       </div>
 
-      <div className="pt-[1.813rem] pb-[1rem]">
-        <div className="max-w-7xl mx-auto text-center">
-          <div className="flex flex-row justify-between items-center">
-            {/* Search input */}
-            <div>
-              <div className="relative w-[15.938rem] max-w-sm">
+      {/* ================= MAIN HEADER ================= */}
+      <div className="px-4 pt-7 pb-4">
+        <div className="max-w-7xl mx-auto">
 
-                <div className="absolute left-4 top-1/2 transform -translate-y-1/2 cursor-pointer">
+          <div className="flex items-center justify-between lg:flex-row-reverse">
+
+            {/* MOBILE MENU (≤1023px) */}
+            <button
+              className="hidden lg:block cursor-pointer"
+              onClick={() => setIsMenuOpen(true)}
+            >
+              <Image src="/menu.svg" alt="menu" width={42} height={42} />
+            </button>
+
+            {/* SEARCH (DESKTOP ONLY >1023px) */}
+            <div className="lg:hidden">
+              <div className="relative w-[15.938rem]">
+                <div className="absolute left-4 top-1/2 -translate-y-1/2 cursor-pointer">
                   {searchTerm ? (
-                    <button
-                      type="button"
-                      onClick={handleClear}
-                      className="focus:outline-none focus:ring-2 focus:ring-blue-500 rounded"
-                      aria-label="Clear search"
-                    >
-                      <IoClose size={18} />
-                    </button>
+                    <IoClose size={18} onClick={() => setSearchTerm("")} />
                   ) : (
-                    <img src="/search-icon.svg" />
+                    <Image src="/search-icon.svg" alt="search" width={16} height={16} />
                   )}
                 </div>
 
@@ -52,67 +58,93 @@ const Header: React.FC<any> = () => {
                   type="text"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full border-b-2 border-[#cecece7a] pr-10 pl-[3rem] py-3 h-11 focus:outline-none focus:border-blue-500"
+                  className="w-full h-11 border-b-2 border-[#cecece7a] pl-12 pr-4 focus:outline-none focus:border-[#151515]"
                 />
               </div>
             </div>
 
-            <div>
-              <Image src="/logo.svg" alt="add-icon" width={171} height={34} />
-            </div>
+            {/* LOGO */}
+            <Image
+              src="/logo.svg"
+              alt="Sophia Fiori"
+              width={171}
+              height={34}
+              className="md:w-[170px]"
+            />
 
-            <div className="flex flex-row items-center gap-[1.25rem]">
-              <div className="text-[#151515]">
-                Cart (0)
-              </div>
+            {/* DESKTOP ACTIONS (>1023px) */}
+            <div className="flex items-center gap-5 lg:hidden">
+              <div className="text-[#151515]">Cart (0)</div>
 
-              <Button className="rounded flex items-center justify-center bg-[#F9FAFB] flex-1 border-1 border-[#151515] rounded-[2.5rem] bg-transparent px-[2rem] py-[0.5rem] text-[#151515]">
+              <Button className="border border-[#151515] rounded-full bg-transparent px-8 py-2 text-[#151515]">
                 Sign up
               </Button>
             </div>
-          </div>
 
-          <div className="flex flex-row justify-center items-center">
-            <div className="text-[#151515] gap-[1.25rem] flex flex-row pt-4">
-              <div>
-                Home
-              </div>
+            {/* MOBILE CART (≤1023px) */}
+            {/* <div className="hidden lg:block">
+              <Image src="/cart.svg" alt="cart" width={22} height={22} />
+            </div> */}
 
-              <div>
-                Shop
-              </div>
-
-              <div>
-                Collections
-              </div>
-
-              <div>
-                Gems of the World
-              </div>
-
-              <div>
-                Signature Collection
-              </div>
-
-              <div>
-                Engagement Collections
-              </div>
-
-              <div>
-                Blog
-              </div>
-
-              <div>
-                About Us
-              </div>
-
-              <div>
-                Contact Us
-              </div>
-            </div>
           </div>
         </div>
       </div>
+
+      {/* ================= DESKTOP NAV (>1023px) ================= */}
+      <nav className="flex justify-center gap-5 pb-4 text-[0.95rem] text-[#151515] lg:hidden">
+        {menuItems.map((item) => (
+          <span key={item} className="cursor-pointer hover:underline">
+            {item}
+          </span>
+        ))}
+      </nav>
+
+      {/* ================= MOBILE DRAWER (≤1023px) ================= */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-50 bg-white hidden lg:block w-[80vw]">
+          <div className="p-6">
+
+            {/* DRAWER HEADER */}
+            <div className="flex items-center justify-between mb-8">
+              <Image src="/logo.svg" alt="logo" width={130} height={30} />
+              <IoClose
+                size={26}
+                className="cursor-pointer"
+                onClick={() => setIsMenuOpen(false)}
+              />
+            </div>
+
+            {/* MOBILE SEARCH */}
+            <input
+              type="text"
+              placeholder="Search..."
+              className="w-full border-b-2 border-[#cecece7a] pb-2 mb-6 focus:outline-none"
+            />
+
+            {/* MOBILE MENU */}
+            <div className="h-[70vh] overflow-auto">
+              <div className="flex flex-col gap-4 text-lg">
+                {menuItems.map((item) => (
+                  <div
+                    key={item}
+                    className="relative py-2 cursor-pointer group"
+                  >
+                    <span className="absolute left-0 top-0 h-full w-[2px] bg-transparent group-hover:bg-[#151515] transition-all"></span>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            {/* MOBILE CTA */}
+            <Button className="mt-8 w-full border border-[#151515] rounded-full bg-transparent py-3 text-[#151515]">
+              Sign up
+            </Button>
+
+          </div>
+        </div>
+      )}
+
     </header>
   );
 };
