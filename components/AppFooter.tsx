@@ -8,13 +8,9 @@ import { FaTiktok } from "react-icons/fa";
 export default function AppFooter() {
   return (
     <footer className="w-full border-t border-[#EAEAEA] bg-white">
-      {/* ✅ Put back the container so footer always measures correctly */}
       <div className="mx-auto w-full max-w-[1416px] px-3">
         <div className="py-14">
-          {/* ✅ Use flex-wrap so it stays horizontal when space exists,
-              and only wraps if truly needed */}
           <div className="flex flex-wrap items-start justify-between gap-16">
-            {/* Left: Newsletter */}
             <div className="min-w-[520px] flex-1">
               <h3 className="font-serif text-[44px] leading-[1.05] tracking-[-0.02em] text-[#151515]">
                 Exclusive Holiday Offer
@@ -38,10 +34,8 @@ export default function AppFooter() {
               </div>
             </div>
 
-            {/* Right: ✅ FORCE 3 columns ALWAYS */}
             <div className="min-w-[560px] flex-1">
               <div className="grid grid-cols-3 gap-12">
-                {/* Contact Information */}
                 <div>
                   <p className="text-[14px] font-semibold text-[#151515]">
                     Contact Information
@@ -73,7 +67,6 @@ export default function AppFooter() {
                   </div>
                 </div>
 
-                {/* Customer Service */}
                 <div>
                   <p className="text-[14px] font-semibold text-[#151515]">
                     Customer Service
@@ -99,10 +92,8 @@ export default function AppFooter() {
             </div>
           </div>
 
-          {/* Divider */}
           <div className="mt-14 h-px w-full bg-[#EAEAEA]" />
 
-          {/* Bottom bar */}
           <div className="py-8">
             <div className="grid grid-cols-3 items-center">
               {/* Socials */}
