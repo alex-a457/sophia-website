@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { Button } from "@heroui/react";
 import { IoClose } from "react-icons/io5";
 
@@ -10,29 +11,25 @@ const Header = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  // ✅ MENU ITEMS WITH ROUTES
   const menuItems = [
-    "Home",
-    "Shop",
-    "Collections",
-    "Gems of the World",
-    "Signature Collection",
-    "Engagement Collections",
-    "Blog",
-    "About Us",
-    "Contact Us",
+    { label: "Home", href: "/" },
+    { label: "Shop", href: "/" },
+    { label: "Collections", href: "/" },
+    { label: "Gems of the World", href: "/" },
+    { label: "Signature Collection", href: "/" },
+    { label: "Engagement Collections", href: "/" },
+    { label: "Blog", href: "/blog" },
+    { label: "About Us", href: "/" },
+    { label: "Contact Us", href: "/" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setShowOfferBar(false);
-      } else {
-        setShowOfferBar(true);
-      }
+      setShowOfferBar(window.scrollY <= 50);
     };
 
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -41,8 +38,9 @@ const Header = () => {
 
       {/* ================= OFFER BAR ================= */}
       <div
-        className={`bg-[#151515] text-white text-center text-[0.875rem] md:text-[0.75rem] px-3 transition-all duration-300 ${showOfferBar ? "opacity-100 h-auto py-3" : "opacity-0 h-0 overflow-hidden"
-          }`}
+        className={`bg-[#151515] text-white text-center text-[0.875rem] md:text-[0.75rem] px-3 transition-all duration-300 ${
+          showOfferBar ? "opacity-100 h-auto py-3" : "opacity-0 h-0 overflow-hidden"
+        }`}
       >
         Exclusive Offer: Enjoy Complimentary Engraving and Worldwide Shipping on All Orders
       </div>
@@ -50,10 +48,9 @@ const Header = () => {
       {/* ================= MAIN HEADER ================= */}
       <div className="px-4 pt-7 pb-4">
         <div className="max-w-7xl mx-auto">
-
           <div className="flex items-center justify-between lg:flex-row-reverse">
 
-            {/* MOBILE MENU (≤1023px) */}
+            {/* MOBILE MENU BUTTON */}
             <button
               className="hidden lg:block cursor-pointer"
               onClick={() => setIsMenuOpen(true)}
@@ -61,7 +58,7 @@ const Header = () => {
               <Image src="/menu.svg" alt="menu" width={42} height={42} />
             </button>
 
-            {/* SEARCH (DESKTOP ONLY >1023px) */}
+            {/* SEARCH (DESKTOP) */}
             <div className="lg:hidden">
               <div className="relative w-[15.938rem]">
                 <div className="absolute left-4 top-1/2 -translate-y-1/2 cursor-pointer">
@@ -82,42 +79,42 @@ const Header = () => {
             </div>
 
             {/* LOGO */}
-            <Image
-              src="/logo.svg"
-              alt="Sophia Fiori"
-              width={171}
-              height={34}
-              className="md:w-[170px]"
-            />
+            <Link href="/">
+              <Image
+                src="/logo.svg"
+                alt="Sophia Fiori"
+                width={171}
+                height={34}
+                className="md:w-[170px] cursor-pointer"
+              />
+            </Link>
 
-            {/* DESKTOP ACTIONS (>1023px) */}
+            {/* DESKTOP ACTIONS */}
             <div className="flex items-center gap-5 lg:hidden">
               <div className="text-[#151515]">Cart (0)</div>
-
               <Button className="border border-[#151515] rounded-full bg-transparent px-8 py-2 text-[#151515]">
                 Sign up
               </Button>
             </div>
 
-            {/* MOBILE CART (≤1023px) */}
-            {/* <div className="hidden lg:block">
-              <Image src="/cart.svg" alt="cart" width={22} height={22} />
-            </div> */}
-
           </div>
         </div>
       </div>
 
-      {/* ================= DESKTOP NAV (>1023px) ================= */}
+      {/* ================= DESKTOP NAV ================= */}
       <nav className="flex justify-center gap-5 pb-4 text-[0.95rem] text-[#151515] lg:hidden">
         {menuItems.map((item) => (
-          <span key={item} className="cursor-pointer hover:underline">
-            {item}
-          </span>
+          <Link
+            key={item.label}
+            href={item.href}
+            className="cursor-pointer hover:underline"
+          >
+            {item.label}
+          </Link>
         ))}
       </nav>
 
-      {/* ================= MOBILE DRAWER (≤1023px) ================= */}
+      {/* ================= MOBILE DRAWER ================= */}
       {isMenuOpen && (
         <div className="fixed inset-0 z-50 bg-white hidden lg:block w-[80vw]">
           <div className="p-6">
@@ -143,13 +140,14 @@ const Header = () => {
             <div className="h-[70vh] overflow-auto">
               <div className="flex flex-col gap-4 text-lg">
                 {menuItems.map((item) => (
-                  <div
-                    key={item}
-                    className="relative py-2 cursor-pointer group"
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    onClick={() => setIsMenuOpen(false)}
+                    className="relative py-2 cursor-pointer hover:underline"
                   >
-                    <span className="absolute left-0 top-0 h-full w-[2px] bg-transparent group-hover:bg-[#151515] transition-all" />
-                    {item}
-                  </div>
+                    {item.label}
+                  </Link>
                 ))}
               </div>
             </div>
