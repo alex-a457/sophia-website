@@ -1,11 +1,12 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { Button } from "@heroui/react";
 import { IoClose } from "react-icons/io5";
 
 const Header = () => {
+  const [showOfferBar, setShowOfferBar] = useState(true);
   const [searchTerm, setSearchTerm] = useState("");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -21,11 +22,28 @@ const Header = () => {
     "Contact Us",
   ];
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setShowOfferBar(false);
+      } else {
+        setShowOfferBar(true);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header className="sticky top-0 z-50 bg-white border-b border-[#E5E5E5]">
 
       {/* ================= OFFER BAR ================= */}
-      <div className="bg-[#151515] text-white text-center text-[0.875rem] md:text-[0.75rem] py-3 px-3">
+      <div
+        className={`bg-[#151515] text-white text-center text-[0.875rem] md:text-[0.75rem] px-3 transition-all duration-300 ${showOfferBar ? "opacity-100 h-auto py-3" : "opacity-0 h-0 overflow-hidden"
+          }`}
+      >
         Exclusive Offer: Enjoy Complimentary Engraving and Worldwide Shipping on All Orders
       </div>
 
