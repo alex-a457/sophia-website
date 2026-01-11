@@ -107,14 +107,14 @@ export default function BlogPage() {
                             setActiveTag(tag);
                             setCurrentPage(1);
                         }}>
-                        <div
+                        <Button
                             className={`${activeTag === tag
                                 ? 'bg-[#151515] text-white border-transparent'
-                                : 'text-[#AEAEAE] border-[#AEAEAE]'
+                                : 'text-[#AEAEAE] border-[#AEAEAE] bg-transparent'
                                 } px-[1.5rem] py-[0.5rem] rounded-[2.5rem] cursor-pointer border  hover:bg-[#151515] hover:text-white`} onClick={() => setActiveTag(tag)}
                         >
                             {tag}
-                        </div>
+                        </Button>
                     </div>
                 ))}
             </div>
