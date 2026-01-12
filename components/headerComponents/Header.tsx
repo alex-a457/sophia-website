@@ -62,7 +62,7 @@ const Header: React.FC<any> = () => {
             </div>
 
             <div className="flex flex-row items-center gap-[1.25rem]">
-              <div className="text-[#151515]">
+              <div className="text-[#151515] cursor-pointer" onClick={() => router.push("/cart")}>
                 Cart (0)
               </div>
 

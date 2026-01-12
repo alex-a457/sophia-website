@@ -54,6 +54,9 @@ module.exports = {
       // => @media (max-width: 479px) { ... }
     },
   },
+    borderRadius: {
+    '4xl': '40px',
+  },
 
   plugins: [heroui()],
   rules: {
