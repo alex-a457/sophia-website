@@ -2,23 +2,13 @@
 "use client";
 
 import React, { useMemo } from "react";
-import AppImage from "@/components/AppImage";
+import AppImage from "@/components/ui/AppImage";
 import QuantityStepper from "./QuantityStepper";
 import { formatMoney } from "@/lib/money";
 import { Select, SelectItem, Checkbox } from "@heroui/react";
 import { useCartStore } from "@/lib/store/cart.store";
 import { CartLine } from "@/lib/types/cart";
-
-function TrashIcon(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" {...props}>
-      <path strokeWidth="1.8" strokeLinecap="round" d="M4 7h16" />
-      <path strokeWidth="1.8" strokeLinecap="round" d="M10 11v7M14 11v7" />
-      <path strokeWidth="1.8" strokeLinecap="round" d="M6 7l1 14h10l1-14" />
-      <path strokeWidth="1.8" strokeLinecap="round" d="M9 7V4h6v3" />
-    </svg>
-  );
-}
+import { CiTrash } from "react-icons/ci";
 
 type Props = { line: CartLine };
 
@@ -29,32 +19,27 @@ export default function CartItemRow({ line }: Props) {
   return (
     <div
       className="
-        grid gap-5 py-7
+        grid gap-5 py-7 items-center
         grid-cols-[305px_1fr_auto]
-        md:grid-cols-[261px_1fr_auto]
-        xs:grid-cols-1
-        items-center
+        sm:grid-cols-1
       "
     >
       {/* Image */}
       <div
         className="
           w-[305px]
-          md:w-[261px]
-          xs:w-full xs:max-w-[343px]
-          xs:mx-auto
+          sm:w-full sm:max-w-[343px]
+          sm:mx-auto
         "
       >
         <AppImage
           src={line.imageSrc}
           alt={line.title}
-          // Use responsive aspect ratios instead of a fixed aspectRatio={1}
           className={{
             wrapperClass: `
-              rounded-2xl bg-neutral-100 overflow-hidden
+              rounded-2xl overflow-hidden
               aspect-[1/1]
-              md:aspect-[261/305]
-              xs:aspect-[343/255]
+              sm:aspect-[343/255]
             `,
             imageClass: "rounded-2xl object-contain p-1.5",
             skeletonClass: "rounded-2xl",
@@ -63,30 +48,33 @@ export default function CartItemRow({ line }: Props) {
       </div>
 
       {/* Details */}
-      <div className="min-w-0 xs:mt-1">
+      <div className="min-w-0 sm:mt-1">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <div className="truncate text-[28px] font-semibold text-[#151515]">
+            <h2 className="truncate sm:text-2xl text-[28px] font-semibold">
               {line.title}
-            </div>
+            </h2>
             {line.subtitle ? (
-              <div className="mt-3 text-base text-[#151515]">{line.subtitle}</div>
+              <div className="mt-3 text-base text-[#151515]">
+                {line.subtitle}
+              </div>
             ) : null}
           </div>
 
-          <div className="shrink-0 text-[32px] font-semibold text-[#151515]">
+          <div className="shrink-0 sm:text-2xl text-[32px] font-semibold text-[#151515]">
             {formatMoney(line.price, line.currency ?? "USD")}
           </div>
         </div>
 
         {/* dropdown + checkbox */}
         <div className="mt-4 flex flex-col gap-2">
-          <div className="max-w-[305px] xs:max-w-full mb-4">
+          <div className="max-w-[305px] sm:max-w-full mb-4">
             <Select
               aria-label="Select size"
               selectedKeys={line.size ? new Set([line.size]) : new Set([])}
               onSelectionChange={(keys) => {
                 const v = Array.from(keys)[0] as string | undefined;
+
                 if (v) setSize(line.id, v);
               }}
               classNames={{
@@ -116,7 +104,7 @@ export default function CartItemRow({ line }: Props) {
         </div>
 
         {/* qty + delete */}
-        <div className="mt-8 flex items-center gap-32">
+        <div className="xs:mt-7 mt-8 flex items-center gap-32 xs:gap-0 xs:justify-between">
           <QuantityStepper
             value={line.qty}
             onDecrease={() => decQty(line.id)}
@@ -126,16 +114,16 @@ export default function CartItemRow({ line }: Props) {
           <button
             type="button"
             onClick={() => removeLine(line.id)}
-            className=" inline-flex items-center gap-2 text-[#AEAEAE] hover:text-[#151515]"
+            className="inline-flex items-center gap-2 text-[#AEAEAE] hover:text-[#151515]"
             aria-label="Remove item"
           >
-            <TrashIcon className="h-8 w-8" />
+            <CiTrash size={32} />
           </button>
         </div>
       </div>
 
       {/* spacer column (hide when stacked) */}
-      <div className="xs:hidden" />
+      <div className="sm:hidden" />
     </div>
   );
 }

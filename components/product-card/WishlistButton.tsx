@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
-import { AppButton } from "./AppButton";
 import { IoHeart, IoHeartOutline } from "react-icons/io5";
+import { AppButton } from "../ui/AppButton";
 
 type WishlistButtonProps = {
   isActive:boolean
@@ -19,7 +19,7 @@ export default function WishlistButton({isActive ,onToggle,className}:WishlistBu
    onPress={onToggle}
    aria-label={`${isActive ? "Wishlist is Active" :"Wishlist is Inactive"}`}
    className={cn(
-   "absolute  right-3 top-3 h-12 w-12 min-w-0 p-0 shadow-sm border-[#AEAEAE]", 
+   "absolute z-10 md:right-2 md:top-2 right-3 top-3 md:h-10 md:w-10 h-12 w-12 min-w-0 p-0 shadow-sm border-[#AEAEAE]", 
    isActive ? "text-[#EA4335]" : "text-[#AEAEAE]",
    className
       )}

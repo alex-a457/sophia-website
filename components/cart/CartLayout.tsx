@@ -12,7 +12,7 @@ export default function CartLayout() {
 
   return (
     <div className="w-full px-6 py-10">
-      <div className="text-sm font-medium text-neutral-900">
+      <div className="text-2xl font-medium text-[#151515]">
         Shopping bag ({lines.length})
       </div>
 
@@ -20,7 +20,7 @@ export default function CartLayout() {
       <div className="mt-6 grid grid-cols-[7fr_3fr] gap-10 lg:grid-cols-1 lg:gap-8">
         {/* LEFT: items (NO custom scroll) */}
         <div className="min-h-[200px]">
-          <div className="divide-y divide-neutral-200">
+          <div className="">
             {lines.map((line) => (
               <CartItemRow key={line.id} line={line} />
             ))}
@@ -28,7 +28,7 @@ export default function CartLayout() {
         </div>
 
         {/* RIGHT: sticky summary on desktop, normal flow on lg */}
-        <div className="self-start sticky top-6 lg:static">
+        <div className="self-start sticky top-6 mt-8 lg:static">
           <CartSummary />
         </div>
       </div>
