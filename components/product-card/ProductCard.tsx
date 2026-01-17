@@ -123,7 +123,7 @@ export default function ProductCard({
 
   useMemo(() => {
     if (!options.some((o) => o.id === currentColorId)) setColor(initialId);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+     
   }, [options]);
 
   return (

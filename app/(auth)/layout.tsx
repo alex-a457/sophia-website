@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "@/components/headerComponents/Header";
 
 export default function AuthLayout({
   children,

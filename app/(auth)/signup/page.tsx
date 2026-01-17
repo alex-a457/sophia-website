@@ -42,8 +42,7 @@ export default function SignupPage() {
     terms: false,
   };
 
-  const handleSubmit = (values: any, { setSubmitting }: any) => {
-    console.log(values);
+  const handleSubmit = (_values: any, { setSubmitting }: any) => {
     setSubmitting(false);
     router.push("/login");
   };
@@ -51,11 +50,12 @@ export default function SignupPage() {
   return (
     <div className="w-full min-h-screen flex">
       {/* Left Image */}
-      <div className="w-1/2 lg:hidden h-screen">
-        <img
+      <div className="w-1/2 lg:hidden h-screen relative">
+        <Image
           src="/auth/signup.png"
           alt="Signup Banner"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
         />
       </div>
 
@@ -162,9 +162,11 @@ export default function SignupPage() {
                           "placeholder:text-[#AEAEAE] placeholder:text-[1rem] pr-8",
                       }}
                       endContent={
-                        <div
+                        <button
+                          type="button"
                           className="w-8 h-8 flex items-center justify-center cursor-pointer"
                           onClick={() => setShowPassword(!showPassword)}
+                          aria-label={showPassword ? "Hide password" : "Show password"}
                         >
                           {showPassword ? (
                             <svg
@@ -194,7 +196,7 @@ export default function SignupPage() {
                               height={20}
                             />
                           )}
-                        </div>
+                        </button>
                       }
                     />
                   )}

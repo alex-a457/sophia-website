@@ -1,16 +1,9 @@
 "use client";
 import React, { useState } from "react";
-import { LayoutGroup, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import {
   Button,
-  Input,
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-  Select,
-  SelectItem,
 } from "@heroui/react";
-import { Slider } from "@heroui/react";
 import Header from "@/components/headerComponents/Header";
 import Footer from "@/components/Footer";
 
@@ -44,57 +37,6 @@ const slides = [
     image: "/slide-3.png",
   },
 ];
-
-type SliderComponentProps = {
-  value: number[];
-  setValue: (val: number[]) => void;
-};
-
-const SliderComponent: React.FC<SliderComponentProps> = ({
-  value,
-  setValue,
-}) => {
-  // Helper to format currency without trailing .00
-  const formatValue = (val: number) => {
-    // Round to integer and add dollar sign
-    return `$${Math.round(val)}`;
-  };
-
-  return (
-    <div className="flex flex-col w-full h-full max-w-md items-start justify-center px-4 py-2 bg-white">
-      <div className="text-black font-medium mb-6 flex flex-row gap-11">
-        <div>Price Range</div>
-
-        <div className="text-[#1F2A37] font-normal">
-          {`${formatValue(value[0])} – ${formatValue(value[1])}`}
-        </div>
-      </div>
-
-      <Slider
-        className="max-w-md"
-        formatOptions={{ style: "currency", currency: "USD" }} // optional, can remove since we format ourselves
-        maxValue={1000}
-        minValue={0}
-        step={10}
-        value={value}
-        onChange={(val) => {
-          if (Array.isArray(val)) setValue(val);
-        }}
-        classNames={{
-          label: "mb-6", // 24px gap below label
-          track: "bg-[#E5E7EB] h-1", // light grey track with 4px height
-          filler: "bg-black", // black filled part
-        }}
-        renderThumb={(props) => (
-          <div
-            {...props}
-            className="w-3 h-3 bg-black rounded-full border-none cursor-pointer transition-all duration-200 hover:scale-110 data-[dragging=true]:w-4 data-[dragging=true]:h-4 data-[dragging=true]:shadow-lg data-[dragging=true]:shadow-black/20 mt-[2px]"
-          />
-        )}
-      />
-    </div>
-  );
-};
 
 export default function Page() {
   const [index, setIndex] = useState(0);

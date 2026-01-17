@@ -35,8 +35,7 @@ export default function LoginPage() {
     rememberMe: false,
   };
 
-  const handleSubmit = (values: any, { setSubmitting }: any) => {
-    console.log(values);
+  const handleSubmit = (_values: any, { setSubmitting }: any) => {
     setSubmitting(false);
     router.push("/");
   };
@@ -44,11 +43,12 @@ export default function LoginPage() {
   return (
     <div className="w-full min-h-screen flex">
       {/* Left Image */}
-      <div className="w-1/2 lg:hidden h-screen">
-        <img
+      <div className="w-1/2 lg:hidden h-screen relative">
+        <Image
           src="/login-left-banner.png"
           alt="Login Banner"
-          className="w-full h-full object-cover"
+          fill
+          className="object-cover"
         />
       </div>
 
@@ -138,9 +138,11 @@ export default function LoginPage() {
                           ].join(" "),
                         }}
                         endContent={
-                          <div
+                          <button
+                            type="button"
                             className="w-8 h-8 flex items-center justify-center cursor-pointer"
                             onClick={() => setShowPassword(!showPassword)}
+                            aria-label={showPassword ? "Hide password" : "Show password"}
                           >
                             {showPassword ? (
                               <svg
@@ -170,7 +172,7 @@ export default function LoginPage() {
                                 height={20}
                               />
                             )}
-                          </div>
+                          </button>
                         }
                       />
                     )}

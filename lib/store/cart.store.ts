@@ -181,11 +181,13 @@ export const useCartStore = create<CartState>((set, get) => ({
 
   getSubtotal: () => {
     const { lines } = get();
+
     return lines.reduce((sum, l) => sum + l.price * l.qty, 0);
   },
 
   getTotal: () => {
     const { deliveryFee, taxes } = get();
+
     return get().getSubtotal() + deliveryFee + taxes;
   },
 }));

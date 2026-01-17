@@ -50,7 +50,9 @@ export default function ShippingPage() {
               addressDetails: "",
             }}
             validationSchema={validationSchema}
-            onSubmit={(values) => console.log(values)}
+            onSubmit={(_values) => {
+              // Handle form submission
+            }}
           >
             {({ errors, touched }) => (
               <Form className="mt-[35px] space-y-[22px]">

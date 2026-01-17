@@ -6,7 +6,6 @@ import { useState } from "react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 export default function BlogPage() {
-    const blogs = [];
     const blogTags = ['All', 'Trends', 'Styling Tips', 'Seasonal Looks', 'Celebrity Jewelry'];
     const [activeTag, setActiveTag] = useState('All');
     const blogPosts = [
@@ -102,20 +101,19 @@ export default function BlogPage() {
 
             <div className="w-full p-[0.5rem] flex flex-row flex-wrap gap-x-1 gap-y-1 mb-[2.5rem]">
                 {blogTags.map((tag, ind) => (
-                    <div key={ind}
-                        onClick={() => {
-                            setActiveTag(tag);
-                            setCurrentPage(1);
-                        }}>
-                        <Button
+                    <Button
+                        key={ind}
                             className={`${activeTag === tag
                                 ? 'bg-theme text-white border-transparent'
                                 : 'text-[#AEAEAE] border-[#AEAEAE] bg-transparent'
-                                } px-[1.5rem] py-[0.5rem] rounded-[2.5rem] cursor-pointer border  hover:bg-theme hover:text-white`} onClick={() => setActiveTag(tag)}
+                                } px-[1.5rem] py-[0.5rem] rounded-[2.5rem] cursor-pointer border  hover:bg-theme hover:text-white`}
+                            onClick={() => {
+                                setActiveTag(tag);
+                                setCurrentPage(1);
+                            }}
                         >
                             {tag}
                         </Button>
-                    </div>
                 ))}
             </div>
 
