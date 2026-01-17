@@ -13,16 +13,46 @@ module.exports = {
         sanspro: ["SourceSansPro", "sans-serif"], // Why Add sans-serif as a Fallback? If the browser cannot load the custom font it will fall back to a generic font like sans-serif.(Font Loading Issues)
       },
       boxShadow: {
-        "custom-hover": "0px 0px 10px 0px #F25C0580",
+        "custom-hover": "0px 0px 10px 0px var(--color-tertiary-shadow-theme)",
       },
       colors: {
-        background: "#FFFFFF",
-        foreground: "#000000",
-        "theme-color": "#F25C05",
-        // "navigation-hover": "#FFF7F1",
-        "active-font": "#000000",
-        "in-active-font": "#989BA6",
-        "secondary-color": "#023F5C",
+        // Primary Colors (Most Used)
+        "primary-text": "var(--color-primary-text)",
+        "primary-text-muted": "var(--color-primary-text-muted)",
+        "primary-text-light": "var(--color-primary-text-light)",
+        "primary-bg": "var(--color-primary-bg)",
+        "primary-bg-dark": "var(--color-primary-bg-dark)",
+        "primary-bg-overlay": "var(--color-primary-bg-overlay)",
+        "primary-border": "var(--color-primary-border)",
+        "primary-border-light": "var(--color-primary-border-light)",
+        "primary-border-muted": "var(--color-primary-border-muted)",
+        "primary-border-dark": "var(--color-primary-border-dark)",
+        
+        // Secondary Colors (Less Used)
+        "secondary-accent": "var(--color-secondary-accent)",
+        "secondary-brand": "var(--color-secondary-brand)",
+        "secondary-theme": "var(--color-secondary-theme)",
+        "secondary-success": "var(--color-secondary-success)",
+        "secondary-error": "var(--color-secondary-error)",
+        "secondary-warning": "var(--color-secondary-warning)",
+        "secondary-info": "var(--color-secondary-info)",
+        "secondary-gray": "var(--color-secondary-gray)",
+        "secondary-gray-light": "var(--color-secondary-gray-light)",
+        "secondary-gray-dark": "var(--color-secondary-gray-dark)",
+        "secondary-gray-border": "var(--color-secondary-gray-border)",
+        
+        // Tertiary Colors (Rarely Used)
+        "tertiary-secondary": "var(--color-tertiary-secondary)",
+        "tertiary-inactive": "var(--color-tertiary-inactive)",
+        "tertiary-active": "var(--color-tertiary-active)",
+        
+        // Legacy Support (backward compatibility)
+        background: "var(--color-primary-bg)",
+        foreground: "var(--color-primary-text)",
+        "theme-color": "var(--color-secondary-theme)",
+        "active-font": "var(--color-tertiary-active)",
+        "in-active-font": "var(--color-tertiary-inactive)",
+        "secondary-color": "var(--color-tertiary-secondary)",
       },
       animation: {
         blink: "blink 1.2s infinite both",

@@ -45,35 +45,32 @@ const radiusStyles: Record<AppButtonRadius, string> = {
 
 /* ---------------------------- Variant + Tone ------------------------------- */
 
-const INK = '#151515'
-const FB = '#0F71CD'
-
 /* SOLID = filled buttons */
 const solidToneStyles: Record<AppButtonTone, string> = {
   // Primary black buttons (Submit / Buy Now)
-  dark: `bg-[${INK}] text-white border border-[${INK}] hover:bg-[${INK}]/95 active:bg-[${INK}]/90`,
+  dark: 'bg-primary-text text-white border border-primary-text hover:bg-primary-text/95 active:bg-primary-text/90',
   light: 'bg-white text-black border border-white hover:bg-zinc-100 active:bg-zinc-200',
   muted: 'bg-zinc-200 text-zinc-700 border border-zinc-200 hover:bg-zinc-300 active:bg-zinc-400',
   // Facebook / Brand solid
-  brand: `bg-[${FB}] text-white border border-[${FB}] hover:bg-[${FB}]/90 active:bg-[${FB}]/80`,
+  brand: 'bg-secondary-brand text-white border border-secondary-brand hover:bg-secondary-brand/90 active:bg-secondary-brand/80',
 }
 
 /* OUTLINE = transparent outline (navbar style) */
 const outlineToneStyles: Record<AppButtonTone, string> = {
   // Dark ink outline (Sign up on white navbar)
-  dark: `bg-transparent border border-[${INK}] text-[${INK}] hover:bg-[${INK}]/[0.04] active:bg-[${INK}]/[0.08]`,
+  dark: 'bg-transparent border border-primary-text text-primary-text hover:bg-primary-text/[0.04] active:bg-primary-text/[0.08]',
   // White ink outline (when placed on images)
   light: 'bg-transparent border border-white text-white hover:bg-white/[0.08] active:bg-white/[0.12]',
   muted:
     'bg-transparent border border-zinc-400 text-zinc-600 hover:bg-zinc-900/[0.03] active:bg-zinc-900/[0.06]',
-  brand: `bg-transparent border border-[${FB}] text-[${FB}] hover:bg-[${FB}]/[0.08] active:bg-[${FB}]/[0.12]`,
+  brand: 'bg-transparent border border-secondary-brand text-secondary-brand hover:bg-secondary-brand/[0.08] active:bg-secondary-brand/[0.12]',
 }
 
 /* GLASS = frosted outline (blur + tiny tint) */
 const glassToneStyles: Record<AppButtonTone, string> = {
   // Frosted for LIGHT surfaces (used even on white bg)
   // Looks like: subtle dark tint + dark border/text + blur
-  dark: `bg-[${INK}]/[0.02] border border-[${INK}] text-[${INK}] backdrop-blur-[8px] hover:bg-[${INK}]/[0.04] active:bg-[${INK}]/[0.06]`,
+  dark: 'bg-primary-text/[0.02] border border-primary-text text-primary-text backdrop-blur-[8px] hover:bg-primary-text/[0.04] active:bg-primary-text/[0.06]',
 
   // Frosted for DARK/IMAGE surfaces
   // Looks like: subtle white tint + white border/text + blur
@@ -84,15 +81,15 @@ const glassToneStyles: Record<AppButtonTone, string> = {
     'bg-white/[0.06] border border-white/20 text-zinc-100 backdrop-blur-[8px] hover:bg-white/[0.10] active:bg-white/[0.14]',
 
   // Frosted brand (rare)
-  brand: `bg-[${FB}]/[0.12] border border-[${FB}]/60 text-white backdrop-blur-[8px] hover:bg-[${FB}]/[0.18] active:bg-[${FB}]/[0.24]`,
+  brand: 'bg-secondary-brand/[0.12] border border-secondary-brand/60 text-white backdrop-blur-[8px] hover:bg-secondary-brand/[0.18] active:bg-secondary-brand/[0.24]',
 }
 
 /* GHOST = text-only */
 const ghostToneStyles: Record<AppButtonTone, string> = {
-  dark: `bg-transparent text-[${INK}] hover:bg-[${INK}]/[0.04] active:bg-[${INK}]/[0.08]`,
+  dark: 'bg-transparent text-primary-text hover:bg-primary-text/[0.04] active:bg-primary-text/[0.08]',
   light: 'bg-transparent text-white hover:bg-white/[0.08] active:bg-white/[0.12]',
   muted: 'bg-transparent text-zinc-500 hover:bg-zinc-900/[0.03] active:bg-zinc-900/[0.06]',
-  brand: `bg-transparent text-[${FB}] hover:bg-[${FB}]/[0.08] active:bg-[${FB}]/[0.12]`,
+  brand: 'bg-transparent text-secondary-brand hover:bg-secondary-brand/[0.08] active:bg-secondary-brand/[0.12]',
 }
 
 
