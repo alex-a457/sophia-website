@@ -55,13 +55,13 @@ export default function CartItemRow({ line }: Props) {
               {line.title}
             </h2>
             {line.subtitle ? (
-              <div className="mt-3 text-base text-[#151515]">
+              <div className="mt-3 text-base text-theme">
                 {line.subtitle}
               </div>
             ) : null}
           </div>
 
-          <div className="shrink-0 sm:text-2xl text-[32px] font-semibold text-[#151515]">
+          <div className="shrink-0 sm:text-2xl text-[32px] font-semibold text-theme">
             {formatMoney(line.price, line.currency ?? "USD")}
           </div>
         </div>
@@ -80,7 +80,7 @@ export default function CartItemRow({ line }: Props) {
               classNames={{
                 trigger:
                   "min-h-9 h-13 rounded-full bg-white border border-[#AEAEAE] shadow-none",
-                value: "text-lg text-[#151515]",
+                value: "text-lg text-theme",
               }}
             >
               {sizes.map((s) => (
@@ -114,7 +114,7 @@ export default function CartItemRow({ line }: Props) {
           <button
             type="button"
             onClick={() => removeLine(line.id)}
-            className="inline-flex items-center gap-2 text-[#AEAEAE] hover:text-[#151515]"
+            className="inline-flex items-center gap-2 text-[#AEAEAE] hover:text-theme"
             aria-label="Remove item"
           >
             <CiTrash size={32} />

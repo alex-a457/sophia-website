@@ -362,7 +362,7 @@ export default function Page() {
                   </div>
                 </div>
 
-                <h2 className="text-[1.5rem] text-[#151515] font-semibold max-w-[18.5rem] truncate">
+                <h2 className="text-[1.5rem] text-theme font-semibold max-w-[18.5rem] truncate">
                   {product.product_name}
                 </h2>
 
@@ -418,7 +418,7 @@ export default function Page() {
       {/* 4. Latest creations */}
       <div className="max-w-7xl mx-auto text-center mb-[6.313rem]">
         <div className="flex flex-col items-center mb-[3.375rem]">
-          <h1 className="text-[3rem] text-[#151515] font-medium mb-[1.5rem] lg:text-[2.5rem]">
+          <h1 className="text-[3rem] text-theme font-medium mb-[1.5rem] lg:text-[2.5rem]">
             Our latest creations
           </h1>
 
@@ -504,12 +504,12 @@ export default function Page() {
                   </div>
                 </div>
 
-                <h2 className="text-[1.5rem] text-[#151515] font-semibold">
+                <h2 className="text-[1.5rem] text-theme font-semibold">
                   {product.product_name}
                 </h2>
 
                 <div className="font-semibold flex flex-row gap-[0.75rem]">
-                  <div className="text-[#151515] font-semibold text-[1.125rem]">
+                  <div className="text-theme font-semibold text-[1.125rem]">
                     {product.currency}{product.product_price}
                   </div>
                 </div>
@@ -556,7 +556,7 @@ export default function Page() {
 
       {/* 6. Discover your perfect match */}
       <div className="max-w-7xl mx-auto flex flex-col items-center mb-[6.25rem] md:mb-[3rem] px-[5px] text-center">
-        <h1 className="text-[3rem] text-[#151515] font-medium mb-[1.5rem]">
+        <h1 className="text-[3rem] text-theme font-medium mb-[1.5rem]">
           Discover Your Perfect Match
         </h1>
 
@@ -576,7 +576,7 @@ export default function Page() {
                 />
               </div>
 
-              <h3 className="text-[1.75rem] text-[#151515] font-semibold text-center md:text-[1.4rem]">
+              <h3 className="text-[1.75rem] text-theme font-semibold text-center md:text-[1.4rem]">
                 {item.name}
               </h3>
             </div>

@@ -7,11 +7,11 @@ const Footer = () => {
     <div className="w-full flex flex-col justify-center items-center px-[5px]">
       <div className="max-w-7xl w-full pt-[3rem] sm:pt-[1rem] pb-[2rem] grid grid-cols-2 md:grid-cols-1 gap-y-[3rem] gap-x-[1rem] px-[5px]">
         <div className="max-w-[34rem] text-center">
-          <h2 className="text-[3rem] font-medium text-[#151515] md:text-[2.5rem]">
+          <h2 className="text-[3rem] font-medium text-theme md:text-[2.5rem]">
             Exclusive Holiday Offer
           </h2>
 
-          <div className="text-center text-[#AEAEAE] mb-[1.5rem]">
+          <div className="text-center text-text-muted mb-[1.5rem]">
             Get ready to shine this season with our special holiday discount! For a limited time, enjoy 25 % off on selected jewelry pieces.
           </div>
 
@@ -22,12 +22,12 @@ const Footer = () => {
               radius="full"
               placeholder="Enter your email"
               classNames={{
-                inputWrapper: "border border-[#AEAEAE] hover:border-[#AEAEAE] focus-within:border-[#AEAEAE] h-[2.938rem]",
-                input: "placeholder:text-[#AEAEAE] text-base",
+                inputWrapper: "border border-text-muted hover:border-text-muted focus-within:border-text-muted h-[2.938rem]",
+                input: "placeholder:text-text-muted text-base",
               }}
             />
 
-            <Button className="rounded-full bg-[#151515] font-semibold text-white h-[2.938rem]">
+            <Button className="rounded-full bg-theme font-semibold text-white h-[2.938rem]">
               Submit
             </Button>
           </div>
@@ -37,11 +37,11 @@ const Footer = () => {
         <div className="flex flex-wrap flex-row gap-[2.375rem] md:gap-[2rem]">
           {/* 2nd col */}
           <div>
-            <h2 className="text-[1.5rem] font-semibold mb-[1.5rem] text-[#151515]">
+            <h2 className="text-[1.5rem] font-semibold mb-[1.5rem] text-theme">
               Contact Information
             </h2>
 
-            <div className="text-[1.125rem] text-[#AEAEAE]">
+            <div className="text-[1.125rem] text-text-muted">
               <button className="text-left hover:underline focus:underline focus:outline-none cursor-pointer">
                 Sophia Fiori Jewelry<br />
                 1234 Elegance Avenue,<br />
@@ -55,11 +55,11 @@ const Footer = () => {
 
           {/* 3rd col */}
           <div>
-            <h2 className="text-[1.5rem] font-semibold mb-[1.5rem] text-[#151515]">
+            <h2 className="text-[1.5rem] font-semibold mb-[1.5rem] text-theme">
               Shop
             </h2>
 
-            <div className="flex flex-col gap-2 text-[1.125rem] text-[#AEAEAE]">
+            <div className="flex flex-col gap-2 text-[1.125rem] text-text-muted">
               <button className="text-left hover:underline focus:underline focus:outline-none crusor-pointer">
                 Rings
               </button>
@@ -77,11 +77,11 @@ const Footer = () => {
 
           {/* 4th col */}
           <div>
-            <h2 className="text-[1.5rem] font-semibold mb-[1.5rem] text-[#151515]">
+            <h2 className="text-[1.5rem] font-semibold mb-[1.5rem] text-theme">
               Customer Service
             </h2>
 
-            <div className="flex flex-col gap-2 text-[1.125rem] text-[#AEAEAE]">
+            <div className="flex flex-col gap-2 text-[1.125rem] text-text-muted">
               <button className="text-left hover:underline focus:underline focus:outline-none crusor-pointer">
                 FAQ
               </button>
@@ -102,7 +102,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl border-b border-[#151515] w-full opacity-10" />
+      <div className="max-w-7xl border-b border-text w-full opacity-10" />
 
       <div className="w-full max-w-7xl text-white my-8 flex flex-wrap justify-between items-center lg:gap-y-[2rem]">
         <div className="flex flex-wrap flex-row gap-[0.25rem]">
@@ -145,7 +145,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex flex-wrap flex-row text-[1.125rem] text-[#AEAEAE] gap-[1.5rem]">
+        <div className="flex flex-wrap flex-row text-[1.125rem] text-text-muted gap-[1.5rem]">
           <div className="cursor-pointer">
             Privacy Policy
           </div>

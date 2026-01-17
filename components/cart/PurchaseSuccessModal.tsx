@@ -49,7 +49,7 @@ export default function PurchaseSuccessModal({
           base: cn(
             "rounded-2xl",
             "w-[92vw] max-w-[605px]",
-            "bg-white text-[#151515]",
+            "bg-white text-theme",
             className
           ),
           backdrop: "bg-black/40 backdrop-blur-sm",
@@ -66,7 +66,7 @@ export default function PurchaseSuccessModal({
                 className={cn(
                   "absolute right-4 top-4 z-10",
                   "grid h-8 w-8 place-items-center rounded-full",
-                  "text-[#151515]/70",
+                  "text-theme/70",
                   "hover:bg-black/5 active:bg-black/10"
                 )}
               >

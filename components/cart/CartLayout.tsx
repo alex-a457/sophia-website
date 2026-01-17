@@ -12,7 +12,7 @@ export default function CartLayout() {
 
   return (
     <div className="w-full px-6 py-10">
-      <div className="text-2xl font-medium text-[#151515]">
+      <div className="text-2xl font-medium text-theme">
         Shopping bag ({lines.length})
       </div>
 

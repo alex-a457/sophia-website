@@ -167,7 +167,7 @@ export default function ProductCard({
 
         <div className="mt-1">
           <Tooltip content={title} placement="top-start">
-            <h3 className="max-w-full truncate text-2xl font-semibold text-[#151515]">
+            <h3 className="max-w-full truncate text-2xl font-semibold text-theme">
               {title}
             </h3>
           </Tooltip>

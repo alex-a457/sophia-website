@@ -57,7 +57,7 @@ export default function ProductColorSwatches({
             className={cn(
               "relative grid place-items-center rounded-full transition",
               "h-8 w-8",
-              selected ? "ring-1 ring-[#151515]" : "ring-1 ring-[#D7D7D7]"
+              selected ? "ring-1 ring-theme" : "ring-1 ring-[#D7D7D7]"
             )}
           >
             <span

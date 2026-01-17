@@ -68,11 +68,11 @@ export default function SignupPage() {
           </div>
 
           {/* Heading */}
-          <h1 className="text-[3rem] lg:text-[2.5rem] font-medium text-[#151515] text-center mb-2">
+          <h1 className="text-[3rem] lg:text-[2.5rem] font-medium text-theme text-center mb-2">
             Create an account
           </h1>
 
-          <p className="text-[#151515] text-left mb-[3.5rem]">
+          <p className="text-theme text-left mb-[3.5rem]">
             Don’t have an account?{" "}
             <Link href="/login" className="hover:underline font-semibold">
               Sign In
@@ -210,7 +210,7 @@ export default function SignupPage() {
                   >
                     <span className="text-[#AEAEAE]">
                       I agree to the{" "}
-                      <span className="hover:!underline font-semibold text-[#151515]">
+                      <span className="hover:!underline font-semibold text-theme">
                         Terms & Conditions
                       </span>
                     </span>

@@ -42,7 +42,7 @@ export default function QuantityStepper({
           "h-7 w-7 min-w-0 p-0",
           "[&>span]:h-full [&>span]:w-full [&>span]:grid [&>span]:place-items-center",
           canDec
-            ? "bg-[#151515] border-[#151515] text-white hover:bg-[#151515]/95 active:bg-[#151515]/90"
+            ? "bg-theme border-theme text-white hover:bg-theme/95 active:bg-theme/90"
             : "bg-transparent border-[#AEAEAE] text-[#AEAEAE] hover:bg-black/[0.04] active:bg-black/[0.08]"
         )}
       >
@@ -52,7 +52,7 @@ export default function QuantityStepper({
       </AppButton>
 
       {/* VALUE */}
-      <div className="min-w-[18px] text-center text-[28px] font-semibold text-[#151515]">
+      <div className="min-w-[18px] text-center text-[28px] font-semibold text-theme">
         {value}
       </div>
 
@@ -67,7 +67,7 @@ export default function QuantityStepper({
         variant="solid"
         tone="dark"
         className={cn(
-          "h-7 w-7 min-w-0 p-0 bg-[#151515] border-[#151515] text-white hover:bg-[#151515]/95 active:bg-[#151515]/90",
+          "h-7 w-7 min-w-0 p-0 bg-theme border-theme text-white hover:bg-theme/95 active:bg-theme/90",
           "[&>span]:h-full [&>span]:w-full [&>span]:grid [&>span]:place-items-center"
         )}
       >

@@ -38,7 +38,7 @@ const Header = () => {
 
       {/* ================= OFFER BAR ================= */}
       <div
-        className={`bg-[#151515] text-white text-center text-[0.875rem] md:text-[0.75rem] px-3 transition-all duration-300 ${
+        className={`bg-theme text-white text-center text-[0.875rem] md:text-[0.75rem] px-3 transition-all duration-300 ${
           showOfferBar ? "opacity-100 h-auto py-3" : "opacity-0 h-0 overflow-hidden"
         }`}
       >
@@ -73,7 +73,7 @@ const Header = () => {
                   type="text"
                   value={searchTerm}
                   onChange={(e) => setSearchTerm(e.target.value)}
-                  className="w-full h-11 border-b-2 border-[#cecece7a] pl-12 pr-4 focus:outline-none focus:border-[#151515]"
+                  className="w-full h-11 border-b-2 border-[#cecece7a] pl-12 pr-4 focus:outline-none focus:border-theme"
                 />
               </div>
             </div>
@@ -91,8 +91,8 @@ const Header = () => {
 
             {/* DESKTOP ACTIONS */}
             <div className="flex items-center gap-5 lg:hidden">
-              <div className="text-[#151515]">Cart (0)</div>
-              <Button className="border border-[#151515] rounded-full bg-transparent px-8 py-2 text-[#151515]">
+              <div className="text-theme">Cart (0)</div>
+              <Button className="border border-theme rounded-full bg-transparent px-8 py-2 text-theme">
                 Sign up
               </Button>
             </div>
@@ -102,7 +102,7 @@ const Header = () => {
       </div>
 
       {/* ================= DESKTOP NAV ================= */}
-      <nav className="flex justify-center gap-5 pb-4 text-[0.95rem] text-[#151515] lg:hidden">
+      <nav className="flex justify-center gap-5 pb-4 text-[0.95rem] text-theme lg:hidden">
         {menuItems.map((item) => (
           <Link
             key={item.label}
@@ -153,7 +153,7 @@ const Header = () => {
             </div>
 
             {/* MOBILE CTA */}
-            <Button className="mt-8 w-full border border-[#151515] rounded-full bg-transparent py-3 text-[#151515]">
+            <Button className="mt-8 w-full border border-theme rounded-full bg-transparent py-3 text-theme">
               Sign up
             </Button>
 

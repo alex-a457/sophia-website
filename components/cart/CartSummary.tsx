@@ -18,35 +18,35 @@ export default function CartSummary({ className }: { className?: string }) {
   return (
     <aside className={cn("w-full", className)}>
       <div className="rounded-2xl">
-        <h3 className="xs:text-[28px] text-[32px] leading-[40px] font-semibold text-#151515">
+        <h3 className="xs:text-[28px] text-[32px] leading-[40px] font-semibold text-theme">
           Detail Summary
         </h3>
 
         <div className="xs:mt-6 mt-13 space-y-2 xs:text-xl text-2xl">
-          <div className="flex items-center justify-between text-#151515">
-            <span className="text-#151515">Subtotal Price</span>
-            <span className="text-#151515">{formatMoney(subtotal)}</span>
+          <div className="flex items-center justify-between text-theme">
+            <span className="text-theme">Subtotal Price</span>
+            <span className="text-theme">{formatMoney(subtotal)}</span>
           </div>
 
-          <div className="flex items-center justify-between text-#151515">
-            <span className="text-#151515">Price Delivery</span>
-            <span className="text-#151515">
+          <div className="flex items-center justify-between text-theme">
+            <span className="text-theme">Price Delivery</span>
+            <span className="text-theme">
               {deliveryFee === 0 ? "Free" : formatMoney(deliveryFee)}
             </span>
           </div>
 
-          <div className="flex items-center justify-between text-#151515">
-            <span className="text-#151515">Taxes</span>
-            <span className="text-#151515">{formatMoney(taxes)}</span>
+          <div className="flex items-center justify-between text-theme">
+            <span className="text-theme">Taxes</span>
+            <span className="text-theme">{formatMoney(taxes)}</span>
           </div>
 
           <div className="xs:pt-10 pt-16" />
 
           <div className="flex items-center justify-between">
-            <span className="xs:text-[28px] text-[32px] leading-[40px] font-semibold text-#151515">
+            <span className="xs:text-[28px] text-[32px] leading-[40px] font-semibold text-theme">
               Total
             </span>
-            <span className="xs:text-[28px] text-[32px] leading-[40px] font-semibold text-#151515">
+            <span className="xs:text-[28px] text-[32px] leading-[40px] font-semibold text-theme">
               {formatMoney(total)}
             </span>
           </div>

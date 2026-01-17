@@ -96,7 +96,7 @@ export default function BlogPage() {
                 Blog
             </h1>
 
-            <div className="text-[#151515] mb-[3.25rem]">
+            <div className="text-theme mb-[3.25rem]">
                 Discover the stories, craftsmanship, and style behind every sparkle.
             </div>
 
@@ -109,9 +109,9 @@ export default function BlogPage() {
                         }}>
                         <Button
                             className={`${activeTag === tag
-                                ? 'bg-[#151515] text-white border-transparent'
+                                ? 'bg-theme text-white border-transparent'
                                 : 'text-[#AEAEAE] border-[#AEAEAE] bg-transparent'
-                                } px-[1.5rem] py-[0.5rem] rounded-[2.5rem] cursor-pointer border  hover:bg-[#151515] hover:text-white`} onClick={() => setActiveTag(tag)}
+                                } px-[1.5rem] py-[0.5rem] rounded-[2.5rem] cursor-pointer border  hover:bg-theme hover:text-white`} onClick={() => setActiveTag(tag)}
                         >
                             {tag}
                         </Button>
@@ -137,7 +137,7 @@ export default function BlogPage() {
                                     {post.type}
                                 </div>
 
-                                <h2 className="text-[#151515] text-[1.5rem]">
+                                <h2 className="text-theme text-[1.5rem]">
                                     {post.post_name}
                                 </h2>
 
@@ -156,7 +156,7 @@ export default function BlogPage() {
                     onClick={() => setCurrentPage(p => p - 1)}
                     className={`w-[2rem] h-[2rem] rounded-full border flex justify-center items-center cursor-pointer ${currentPage === 1
                         ? 'text-[#AEAEAE] '
-                        : 'text-[#151515]'}`}
+                        : 'text-theme'}`}
                 >
                     <FaArrowLeft />
                 </button>
@@ -165,7 +165,7 @@ export default function BlogPage() {
                     <button
                         key={i}
                         onClick={() => setCurrentPage(i + 1)}
-                        className={`w-[2rem] h-[2rem] text-sm text-[#151515] cursor-pointer ${currentPage === i + 1
+                        className={`w-[2rem] h-[2rem] text-sm text-theme cursor-pointer ${currentPage === i + 1
                             ? ''
                             : 'opacity-30'}`}
                     >
@@ -178,7 +178,7 @@ export default function BlogPage() {
                     onClick={() => setCurrentPage(p => p + 1)}
                     className={`w-[2rem] h-[2rem] rounded-full border flex justify-center items-center cursor-pointer ${currentPage === totalPages
                         ? 'text-[#AEAEAE] '
-                        : 'text-[#151515]'}`}
+                        : 'text-theme'}`}
                 >
                     <FaArrowRight />
                 </button>

@@ -64,11 +64,11 @@ export default function LoginPage() {
             />
           </div>
 
-          <h1 className="text-[3rem] lg:text-[2.5rem] font-medium text-[#151515] text-center mb-2">
+          <h1 className="text-[3rem] lg:text-[2.5rem] font-medium text-theme text-center mb-2">
             Welcome back
           </h1>
 
-          <p className="text-[#151515] text-center mb-[4.125rem]">
+          <p className="text-theme text-center mb-[4.125rem]">
             Please enter your email
           </p>
 
@@ -179,7 +179,7 @@ export default function LoginPage() {
                 </div>
 
                 {/* Remember + Forgot */}
-                <div className="flex items-center justify-between text-[#151515] mb-[2rem]">
+                <div className="flex items-center justify-between text-theme mb-[2rem]">
                   <Checkbox
                     isSelected={values.rememberMe}
                     onValueChange={(val) =>

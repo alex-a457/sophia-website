@@ -85,7 +85,7 @@ export default function ClaimDiscountModal({
               </button>
 
               <ModalHeader className="flex flex-col items-center gap-3 pt-12">
-                <h3 className="xs:text-[32px] text-4xl font-medium text-[#151515]">
+                <h3 className="xs:text-[32px] text-4xl font-medium text-theme">
                   Claim Discount
                 </h3>
                 <p className="xs:text-xs text-sm font-normal text-[#AEAEAE]">
@@ -105,7 +105,7 @@ export default function ClaimDiscountModal({
                     classNames={{
                       inputWrapper:
                         "border-neutral-200 bg-white hover:border-neutral-300 focus-within:border-neutral-400",
-                      input: "text-[#151515]",
+                      input: "text-theme",
                     }}
                   />
 
@@ -120,7 +120,7 @@ export default function ClaimDiscountModal({
                     classNames={{
                       inputWrapper:
                         "border-neutral-200 bg-white hover:border-neutral-300 focus-within:border-neutral-400",
-                      input: "text-[#151515]",
+                      input: "text-theme",
                     }}
                   />
 

@@ -13,46 +13,48 @@ module.exports = {
         sanspro: ["SourceSansPro", "sans-serif"], // Why Add sans-serif as a Fallback? If the browser cannot load the custom font it will fall back to a generic font like sans-serif.(Font Loading Issues)
       },
       boxShadow: {
-        "custom-hover": "0px 0px 10px 0px var(--color-tertiary-shadow-theme)",
+        "custom-hover": "0px 0px 10px 0px var(--shadow-theme)",
       },
       colors: {
-        // Primary Colors (Most Used)
-        "primary-text": "var(--color-primary-text)",
-        "primary-text-muted": "var(--color-primary-text-muted)",
-        "primary-text-light": "var(--color-primary-text-light)",
-        "primary-bg": "var(--color-primary-bg)",
-        "primary-bg-dark": "var(--color-primary-bg-dark)",
-        "primary-bg-overlay": "var(--color-primary-bg-overlay)",
-        "primary-border": "var(--color-primary-border)",
-        "primary-border-light": "var(--color-primary-border-light)",
-        "primary-border-muted": "var(--color-primary-border-muted)",
-        "primary-border-dark": "var(--color-primary-border-dark)",
+        // Text Colors
+        text: "var(--text)",
+        "text-muted": "var(--text-muted)",
+        "text-light": "var(--text-light)",
         
-        // Secondary Colors (Less Used)
-        "secondary-accent": "var(--color-secondary-accent)",
-        "secondary-brand": "var(--color-secondary-brand)",
-        "secondary-theme": "var(--color-secondary-theme)",
-        "secondary-success": "var(--color-secondary-success)",
-        "secondary-error": "var(--color-secondary-error)",
-        "secondary-warning": "var(--color-secondary-warning)",
-        "secondary-info": "var(--color-secondary-info)",
-        "secondary-gray": "var(--color-secondary-gray)",
-        "secondary-gray-light": "var(--color-secondary-gray-light)",
-        "secondary-gray-dark": "var(--color-secondary-gray-dark)",
-        "secondary-gray-border": "var(--color-secondary-gray-border)",
+        // Background Colors
+        bg: "var(--bg)",
+        "bg-dark": "var(--bg-dark)",
+        "bg-overlay": "var(--bg-overlay)",
         
-        // Tertiary Colors (Rarely Used)
-        "tertiary-secondary": "var(--color-tertiary-secondary)",
-        "tertiary-inactive": "var(--color-tertiary-inactive)",
-        "tertiary-active": "var(--color-tertiary-active)",
+        // Border Colors
+        border: "var(--border)",
+        "border-light": "var(--border-light)",
+        "border-muted": "var(--border-muted)",
+        "border-dark": "var(--border-dark)",
+        
+        // Accent Colors
+        accent: "var(--accent)",
+        brand: "var(--brand)",
+        theme: "var(--theme)",
+        
+        // Status Colors
+        success: "var(--success)",
+        error: "var(--error)",
+        warning: "var(--warning)",
+        info: "var(--info)",
+        
+        // Gray Scale
+        gray: "var(--gray)",
+        "gray-light": "var(--gray-light)",
+        "gray-dark": "var(--gray-dark)",
         
         // Legacy Support (backward compatibility)
-        background: "var(--color-primary-bg)",
-        foreground: "var(--color-primary-text)",
-        "theme-color": "var(--color-secondary-theme)",
-        "active-font": "var(--color-tertiary-active)",
-        "in-active-font": "var(--color-tertiary-inactive)",
-        "secondary-color": "var(--color-tertiary-secondary)",
+        background: "var(--bg)",
+        foreground: "var(--text)",
+        "theme-color": "var(--theme)",
+        "active-font": "var(--black)",
+        "in-active-font": "#989BA6",
+        "secondary-color": "#023F5C",
       },
       animation: {
         blink: "blink 1.2s infinite both",
