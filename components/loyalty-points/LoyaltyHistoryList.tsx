@@ -1,6 +1,6 @@
 'use client'
 
-import { memo } from 'react'
+import React, { memo } from 'react'
 import LoyaltyPointsCard from './LoyaltyPointsCard'
 
 interface LoyaltyHistoryListProps {
@@ -26,13 +26,12 @@ const LoyaltyHistoryList = ({
   return (
     <div className="space-y-6">
       {transactions.map(transaction => (
-        <>
+        <React.Fragment key={transaction.id}>
         <LoyaltyPointsCard 
-          key={transaction.id}
           productInfo={transaction}
         />
         <div className="h-[1px] border-b border-[#E5E5E5]"/>
-        </>
+        </React.Fragment>
       ))}
     </div>
   )
