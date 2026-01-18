@@ -28,7 +28,7 @@ export default function CartLayout() {
         </div>
 
         {/* RIGHT: sticky summary on desktop, normal flow on lg */}
-        <div className="self-start sticky top-6 mt-8 lg:static">
+        <div className="self-start sticky top-36 mt-0 lg:static">
           <CartSummary />
         </div>
       </div>
