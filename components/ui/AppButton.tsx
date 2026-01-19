@@ -52,8 +52,11 @@ const FB = '#0F71CD'
 const solidToneStyles: Record<AppButtonTone, string> = {
   // Primary black buttons (Submit / Buy Now)
   dark: `bg-[${INK}] text-white border border-[${INK}] hover:bg-[${INK}]/95 active:bg-[${INK}]/90`,
+
   light: 'bg-white text-black border border-white hover:bg-zinc-100 active:bg-zinc-200',
+
   muted: 'bg-zinc-200 text-zinc-700 border border-zinc-200 hover:bg-zinc-300 active:bg-zinc-400',
+
   // Facebook / Brand solid
   brand: `bg-[${FB}] text-white border border-[${FB}] hover:bg-[${FB}]/90 active:bg-[${FB}]/80`,
 }
@@ -62,10 +65,13 @@ const solidToneStyles: Record<AppButtonTone, string> = {
 const outlineToneStyles: Record<AppButtonTone, string> = {
   // Dark ink outline (Sign up on white navbar)
   dark: `bg-transparent border border-[${INK}] text-[${INK}] hover:bg-[${INK}]/[0.04] active:bg-[${INK}]/[0.08]`,
+
   // White ink outline (when placed on images)
   light: 'bg-transparent border border-white text-white hover:bg-white/[0.08] active:bg-white/[0.12]',
+
   muted:
     'bg-transparent border border-zinc-400 text-zinc-600 hover:bg-zinc-900/[0.03] active:bg-zinc-900/[0.06]',
+    
   brand: `bg-transparent border border-[${FB}] text-[${FB}] hover:bg-[${FB}]/[0.08] active:bg-[${FB}]/[0.12]`,
 }
 
