@@ -1,7 +1,7 @@
 "use client";
 
+import HeroBanner from "@/components/AppHeroBanner";
 import Footer from "@/components/Footer";
-import Header from "@/components/headerComponents/Header";
 import type { ReactNode } from "react";
 
 export default function BookAppointmentLayout({
@@ -11,7 +11,7 @@ export default function BookAppointmentLayout({
 }) {
   return (
     <div>
-      <Header />
+      <HeroBanner/>
 
       <main className="flex-1">{children}</main>
       <Footer />
