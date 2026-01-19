@@ -7,7 +7,7 @@ import LoyaltyHistoryList from "./LoyaltyHistoryList"
 
 const data = [
   {
-    id:1,
+  id:1,
   title:"Drop Sapphire Pedant",
   imageSrc:"/productDemo/loyaltyImg1.svg",
   description:"Thank you for your feedback on the product you purchased!",
@@ -68,8 +68,6 @@ const data = [
   date:"2025-12-12T00:00:00.000Z",
   points:"500"
 }
-
-
 ]
 
 const LoyalityPointsPage = () => {
