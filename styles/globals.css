@@ -19,3 +19,22 @@ h1, h2, h3, h4 {
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
 }
+
+.Hero-page header {
+  background: transparent !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+}
+
+.Hero-page header * {
+  color: #fff !important;
+}
+
+.Hero-page header input {
+  color: #fff !important;
+  border-bottom-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+.Hero-page header > div:first-child {
+  background: rgba(0, 0, 0, 0.6) !important;
+}

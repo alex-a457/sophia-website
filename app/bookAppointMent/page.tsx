@@ -1,3 +1,10 @@
+import { BookAppointmentCardSection } from "@/components/bookAppointMent/BookAppointmentCardSection";
+
 export default function Page() {
-  return <div>Book Appointment</div>;
+  return (
+    <div className="mt-5 bg-white">
+      
+      <BookAppointmentCardSection />
+    </div>
+  );
 }
