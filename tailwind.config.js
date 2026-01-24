@@ -64,14 +64,14 @@ module.exports = {
         },
       },
     },
-    screens: {
-      "2xl": { max: "1535px" }, // ≤1535
-      xl: { max: "1279px" },    // ≤1279
-      lg: { max: "1023px" },    // ≤1023
-      md: { max: "767px" },     // ≤767
-      sm: { max: "639px" },     // ≤639
-      xs: { max: "479px" },     // ≤479
-    },
+    // screens: {
+    //   "2xl": { max: "1535px" }, // ≤1535
+    //   xl: { max: "1279px" },    // ≤1279
+    //   lg: { max: "1023px" },    // ≤1023
+    //   md: { max: "767px" },     // ≤767
+    //   sm: { max: "639px" },     // ≤639
+    //   xs: { max: "479px" },     // ≤479
+    // },
   },
     borderRadius: {
     '4xl': '40px',
