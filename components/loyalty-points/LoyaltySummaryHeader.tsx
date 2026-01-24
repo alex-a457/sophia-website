@@ -1,7 +1,7 @@
 'use client'
 
 import * as React from 'react'
-import { AppButton } from '../ui/AppButton'
+import { AppButton } from '../shared/AppButton'
 
 const formatDate = (d: Date | string) =>
   new Intl.DateTimeFormat("en-GB", { day: "2-digit", month: "2-digit", year: "numeric" })

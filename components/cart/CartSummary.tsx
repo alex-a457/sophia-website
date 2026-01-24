@@ -3,7 +3,7 @@
 
 import React from "react";
 import { formatMoney } from "@/lib/money";
-import { AppButton } from "@/components/ui/AppButton";
+import { AppButton } from "@/components/shared/AppButton";
 import { cn } from "@/lib/utils";
 import { useCartStore } from "@/lib/store/cart.store";
 import ClaimDiscountModal from "./ClaimDiscountModal";

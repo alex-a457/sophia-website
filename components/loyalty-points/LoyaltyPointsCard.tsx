@@ -1,5 +1,5 @@
 import React from 'react'
-import AppImage from '../ui/AppImage'
+import AppImage from '../shared/AppImage'
 
 const formatDate = (d: Date | string) =>
   new Intl.DateTimeFormat("en-GB", { 

@@ -3,7 +3,7 @@
 
 import React from "react";
 import { cn } from "@/lib/utils";
-import { AppButton } from "@/components/ui/AppButton";
+import { AppButton } from "@/components/shared/AppButton";
 
 type Props = {
   value: number;

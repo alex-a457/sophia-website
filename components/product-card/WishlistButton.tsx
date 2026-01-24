@@ -1,6 +1,6 @@
 import { cn } from "@/lib/utils";
 import { IoHeart, IoHeartOutline } from "react-icons/io5";
-import { AppButton } from "../ui/AppButton";
+import { AppButton } from "../shared/AppButton";
 
 type WishlistButtonProps = {
   isActive:boolean
