@@ -1,14 +1,15 @@
 // components/cart/CartLayout.tsx
-"use client";
+'use client';
 
-import React from "react";
-import CartSummary from "./CartSummary";
-import PeopleAlsoBought from "./PeopleAlsoBought";
-import CartItemRow from "./CartItemsRow";
-import { useCartStore } from "@/lib/store/cart.store";
+import React, { useState } from 'react';
+import { useCartStore } from '@/lib/store/cart.store';
+import CartItemRow from './CartItemsRow';
+import CartSummary from './CartSummary';
+import PeopleAlsoBought from './PeopleAlsoBought';
 
 export default function CartLayout() {
   const lines = useCartStore((s) => s.lines);
+  const testState: any = 'Ashy';
 
   return (
     <div className="w-full px-6 py-10">
@@ -28,7 +29,7 @@ export default function CartLayout() {
         </div>
 
         {/* RIGHT: sticky summary on desktop, normal flow on lg */}
-        <div className="self-start sticky top-36 mt-0 lg:static">
+        <div className="sticky top-36 mt-0 self-start lg:static">
           <CartSummary />
         </div>
       </div>
