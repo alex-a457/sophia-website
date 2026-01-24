@@ -74,7 +74,7 @@ const LoyalityPointsPage = () => {
 const [active,setAcitve]  = useState<TabType>('all')
 
   return (
-    <div className="flex flex-col gap-13.5 px-20 mt-9 xl:px-16 lg:mt-8 md:px-6 xs:px-4">
+    <div className="flex  flex-col gap-13.5 2xl:px-20 mt-9 xl:px-16 lg:mt-8 md:px-6 px-4">
       <div className="flex flex-col gap-8.5">
 <LoyaltySummaryHeader
   points={1200}

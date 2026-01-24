@@ -4,7 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
 import { IoCartOutline, IoSearch } from "react-icons/io5";
-import { AppButton } from "../ui/AppButton";
+import { AppButton } from "../shared/AppButton";
 
 type CardHoverActionsProps = {
   onAddToCart?: () => void;

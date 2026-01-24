@@ -2,13 +2,18 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
-import { Tooltip } from "@heroui/react";
 import { cn } from "@/lib/utils";
-import AppImage from "../ui/AppImage";
+import AppImage from "../shared/AppImage";
 import ProductColorSwatches, { ColorSwatchOption } from "./ProductColorSwatches";
 import { DEFAULT_COLOR_OPTIONS } from "@/config/defaultColors";
 import WishlistButton from "./WishlistButton";
 import CardHoverActions from "./CardHoverActions";
+
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
 
 export type Price =
   | { type: "sale"; original: number; sale: number; currency?: "USD" }
@@ -166,10 +171,15 @@ export default function ProductCard({
         </div>
 
         <div className="mt-1">
-          <Tooltip content={title} placement="top-start">
-            <h3 className="max-w-full truncate text-2xl font-semibold text-[#151515]">
-              {title}
-            </h3>
+          <Tooltip>
+            <TooltipTrigger>
+              <h3 className="max-w-full truncate text-2xl font-semibold text-[#151515]">
+                {title}
+              </h3>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>{title}</p>
+            </TooltipContent>
           </Tooltip>
         </div>
 

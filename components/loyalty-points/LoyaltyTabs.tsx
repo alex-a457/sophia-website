@@ -1,7 +1,7 @@
 'use client'
 
 import { memo } from 'react'
-import { AppButton } from '../ui/AppButton'
+import { AppButton } from '../shared/AppButton'
 
 export type TabType = 'all' | 'earnings' | 'deductions'
 

@@ -2,10 +2,9 @@
 "use client";
 
 import React, { useMemo } from "react";
-import AppImage from "@/components/ui/AppImage";
+import AppImage from "@/components/shared/AppImage";
 import QuantityStepper from "./QuantityStepper";
 import { formatMoney } from "@/lib/money";
-import { Select, SelectItem, Checkbox } from "@heroui/react";
 import { useCartStore } from "@/lib/store/cart.store";
 import { CartLine } from "@/lib/types/cart";
 import { CiTrash } from "react-icons/ci";
@@ -69,7 +68,7 @@ export default function CartItemRow({ line }: Props) {
         {/* dropdown + checkbox */}
         <div className="mt-4 flex flex-col gap-2">
           <div className="max-w-[305px] sm:max-w-full mb-4">
-            <Select
+            {/* <Select
               aria-label="Select size"
               selectedKeys={line.size ? new Set([line.size]) : new Set([])}
               onSelectionChange={(keys) => {
@@ -86,10 +85,10 @@ export default function CartItemRow({ line }: Props) {
               {sizes.map((s) => (
                 <SelectItem key={s}>{s}</SelectItem>
               ))}
-            </Select>
+            </Select> */}
           </div>
 
-          <Checkbox
+          {/* <Checkbox
             aria-label="Add gift wrapping"
             isSelected={!!line.giftWrap}
             color="default"
@@ -100,7 +99,7 @@ export default function CartItemRow({ line }: Props) {
             }}
           >
             Add Gift Wrapping
-          </Checkbox>
+          </Checkbox> */}
         </div>
 
         {/* qty + delete */}
