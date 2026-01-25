@@ -13,7 +13,7 @@ export default function HeroBanner({imageUrl, Overlay }: HeroBannerProps) {
     <div className="w-full">
       <section className="Hero-page relative h-screen w-full">
         <div className="absolute top-0 left-0 w-full z-50">
-          <Header />
+          {/* <Header /> */}
         </div>
 
         <Image

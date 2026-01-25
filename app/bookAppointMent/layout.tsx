@@ -17,7 +17,7 @@ export default function BookAppointmentLayout({
         imageUrl={"/assets/bookAppointmentHeroImage.svg"}
       />
       <main className="flex-1">{children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 }
