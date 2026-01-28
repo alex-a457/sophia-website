@@ -47,7 +47,7 @@
 //           radius="full"
 //           size="sm"
 //           className={cn("h-12 text-lg font-normal text-[#AEAEAE]", className)}
-//           onPress={onOpen}
+//           onClick={onOpen}
 //         >
 //           Claim discount
 //         </AppButton>
@@ -78,7 +78,7 @@
 //               </button>
 
 //               <ModalHeader className="flex flex-col items-center gap-3 pt-12">
-//                 <h3 className="xs:text-[32px] text-4xl font-medium text-[#151515]">
+//                 <h3 className="xs:text-[32px] text-4xl font-medium text-foreground">
 //                   Claim Discount
 //                 </h3>
 //                 <p className="xs:text-xs text-sm font-normal text-[#AEAEAE]">
@@ -98,7 +98,7 @@
 //                     classNames={{
 //                       inputWrapper:
 //                         "border-neutral-200 bg-white hover:border-neutral-300 focus-within:border-neutral-400",
-//                       input: "text-[#151515]",
+//                       input: "text-foreground",
 //                     }}
 //                   />
 
@@ -113,7 +113,7 @@
 //                     classNames={{
 //                       inputWrapper:
 //                         "border-neutral-200 bg-white hover:border-neutral-300 focus-within:border-neutral-400",
-//                       input: "text-[#151515]",
+//                       input: "text-foreground",
 //                     }}
 //                   />
 
@@ -124,8 +124,8 @@
 //                     radius="full"
 //                     fullWidth
 //                     className="h-11 mt-7.5"
-//                     isDisabled={!canSubmit}
-//                     onPress={handleSubmit}
+//                     disabled={!canSubmit}
+//                     onClick={handleSubmit}
 //                   >
 //                     Claim Now
 //                   </AppButton>

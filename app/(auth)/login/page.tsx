@@ -1,3 +1,13 @@
+const LoginPage = () => {
+  return (
+    <div>
+      <h1>Login Page</h1>
+    </div>
+  );
+};
+
+export default LoginPage;
+
 // "use client";
 
 // import React, { useEffect, useState } from "react";
@@ -55,7 +65,7 @@
 //       <div className="w-1/2 lg:w-full flex items-center justify-center h-screen overflow-auto">
 //         <div className="w-full max-w-md px-6">
 //           <div className="flex justify-center mb-[1.7rem]">
-//             <Image 
+//             <Image
 //               src='/logo.svg'
 //               width={160}
 //               height={32}
@@ -63,11 +73,11 @@
 //             />
 //           </div>
 
-//           <h1 className="text-[3rem] lg:text-[2.5rem] font-medium text-[#151515] text-center mb-2">
+//           <h1 className="text-[3rem] lg:text-[2.5rem] font-medium text-foreground text-center mb-2">
 //             Welcome back
 //           </h1>
 
-//           <p className="text-[#151515] text-center mb-[4.125rem]">
+//           <p className="text-foreground text-center mb-[4.125rem]">
 //             Please enter your email
 //           </p>
 
@@ -178,7 +188,7 @@
 //                 </div>
 
 //                 {/* Remember + Forgot */}
-//                 <div className="flex items-center justify-between text-[#151515] mb-[2rem]">
+//                 <div className="flex items-center justify-between text-foreground mb-[2rem]">
 //                   <Checkbox
 //                     isSelected={values.rememberMe}
 //                     onValueChange={(val) =>

@@ -1,3 +1,13 @@
+const BlogPage = () => {
+  return (
+    <div>
+      <h1>Blog Page</h1>
+    </div>
+  );
+};
+
+export default BlogPage;
+
 // "use client";
 
 // import Image from "next/image";
@@ -6,7 +16,7 @@
 
 // export default function BlogPage() {
 //     const blogs = [];
-//     const blogTags = ['All', 'Trends', 'Styling Tips', 'Seasonal Looks', 'Celebrity Jewelry']; 
+//     const blogTags = ['All', 'Trends', 'Styling Tips', 'Seasonal Looks', 'Celebrity Jewelry'];
 //     const [activeTag, setActiveTag] = useState('All');
 //     const blogPosts = [
 //         {
@@ -88,14 +98,13 @@
 //         currentPage * POSTS_PER_PAGE
 //     );
 
-
 //     return (
 //         <div className="max-w-7xl mx-auto text-center mt-[2.813rem] mb-[2.5rem] lg:px-[10px] px-[5px]">
 //             <h1 className="text-[5rem] md:text-[4rem] mb-[1.5rem] md:mb-[1rem]">
 //                 Blog
 //             </h1>
 
-//             <div className="text-[#151515] mb-[3.25rem]">
+//             <div className="text-foreground mb-[3.25rem]">
 //                 Discover the stories, craftsmanship, and style behind every sparkle.
 //             </div>
 
@@ -136,7 +145,7 @@
 //                                     {post.type}
 //                                 </div>
 
-//                                 <h2 className="text-[#151515] text-[1.5rem]">
+//                                 <h2 className="text-foreground text-[1.5rem]">
 //                                     {post.post_name}
 //                                 </h2>
 
@@ -155,7 +164,7 @@
 //                     onClick={() => setCurrentPage(p => p - 1)}
 //                     className={`w-[2rem] h-[2rem] rounded-full border flex justify-center items-center cursor-pointer ${currentPage === 1
 //                         ? 'text-[#AEAEAE] '
-//                         : 'text-[#151515]'}`}
+//                         : 'text-foreground'}`}
 //                 >
 //                     <FaArrowLeft />
 //                 </button>
@@ -164,7 +173,7 @@
 //                     <button
 //                         key={i}
 //                         onClick={() => setCurrentPage(i + 1)}
-//                         className={`w-[2rem] h-[2rem] text-sm text-[#151515] cursor-pointer ${currentPage === i + 1
+//                         className={`w-[2rem] h-[2rem] text-sm text-foreground cursor-pointer ${currentPage === i + 1
 //                             ? ''
 //                             : 'opacity-30'}`}
 //                     >
@@ -177,7 +186,7 @@
 //                     onClick={() => setCurrentPage(p => p + 1)}
 //                     className={`w-[2rem] h-[2rem] rounded-full border flex justify-center items-center cursor-pointer ${currentPage === totalPages
 //                         ? 'text-[#AEAEAE] '
-//                         : 'text-[#151515]'}`}
+//                         : 'text-foreground'}`}
 //                 >
 //                     <FaArrowRight />
 //                 </button>

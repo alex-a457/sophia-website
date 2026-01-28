@@ -1,7 +1,6 @@
 // components/cart/CartLayout.tsx
 'use client';
 
-import React, { useState } from 'react';
 import { useCartStore } from '@/lib/store/cart.store';
 import CartItemRow from './CartItemsRow';
 import CartSummary from './CartSummary';
@@ -9,11 +8,10 @@ import PeopleAlsoBought from './PeopleAlsoBought';
 
 export default function CartLayout() {
   const lines = useCartStore((s) => s.lines);
-  const testState: any = 'Ashy';
 
   return (
     <div className="w-full px-6 py-10">
-      <div className="text-2xl font-medium text-[#151515]">
+      <div className="text-2xl font-medium text-foreground">
         Shopping bag ({lines.length})
       </div>
 

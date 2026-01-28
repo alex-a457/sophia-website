@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import type { ThemeProviderProps } from "next-themes";
-
-import * as React from "react";
-import { ThemeProvider as NextThemesProvider } from "next-themes";
+import * as React from 'react';
+import { TooltipProvider } from '@radix-ui/react-tooltip';
+import type { ThemeProviderProps } from 'next-themes';
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
 
 export interface ProvidersProps {
   children: React.ReactNode;
@@ -11,11 +11,9 @@ export interface ProvidersProps {
 }
 
 export function Providers({ children, themeProps }: ProvidersProps) {
-
-
   return (
-  
-      <NextThemesProvider forcedTheme="light" {...themeProps}>{children}</NextThemesProvider>
-
+    <NextThemesProvider forcedTheme="light" {...themeProps}>
+      <TooltipProvider>{children}</TooltipProvider>
+    </NextThemesProvider>
   );
 }

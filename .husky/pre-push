@@ -1,0 +1,3 @@
+
+echo "✅ Running pre-push checks (type-check, build)..."
+npm run pre-push-check

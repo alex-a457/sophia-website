@@ -34,7 +34,7 @@ const eslintConfig = defineConfig([
       ],
 
       // Warn on 'any' instead of error (more flexible for big projects)
-      '@typescript-eslint/no-explicit-any': 'warn',
+      '@typescript-eslint/no-explicit-any': 'error',
 
       // React rules (Next.js already handles these, but explicit is good)
       'react/react-in-jsx-scope': 'off', // Next.js auto-imports React
