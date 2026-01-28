@@ -1,5 +1,30 @@
 {
-  "typescript.tsdk": "node_modules/typescript/lib",
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "never"
+  },
   "editor.formatOnSave": true,
-  "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "[javascript]": {
+  "editor.formatOnSave": true
+},
+"[typescript]": {
+  "editor.formatOnSave": true
+},
+  "tailwindCSS.experimental.classRegex": [
+    // cva (class-variance-authority)
+    ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+    // Template literals
+    [":\\s*`([^`]*)`"],
+    // Object values
+    [":\\s*[\"'`]([^\"'`]*)[\"'`]"]
+  ],
+  "tailwindCSS.classAttributes": [
+    "class",
+    "className",
+    ".*Class"  // Matches any prop ending with "Class"
+  ],
+  "cSpell.words": [
+    "oklch",
+    "rgba",
+    "scalyx"
+  ]
 }

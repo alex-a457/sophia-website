@@ -1,6 +1,8 @@
-@import "tailwindcss";
-@import "tw-animate-css";
+@import 'tailwindcss';
+@import 'tw-animate-css';
 @custom-variant dark (&:is(.dark *));
+@import '../components/home/embla.css';
+@import './tokens/components/buttons.tokens.css';
 
 body {
   font-family: var(--font-switzer);
@@ -13,6 +15,13 @@ h4 {
   font-family: var(--font-playfair);
 }
 
+.swiper-pagination-bullet {
+  background-color: #ccc; /* Inactive dots */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #000; /* Active dot */
+}
 /* -----------------------------
    Utilities
 ------------------------------ */
@@ -93,6 +102,26 @@ h4 {
 
   /* Optional: product subtitle/meta text (your #696868) */
   --color-secondary-muted-foreground: var(--secondary-muted-foreground);
+
+  /* -----------------------------
+     Button utility bridge
+  ------------------------------ */
+  --height-btn-sm: var(--btn-h-sm);
+  --height-btn-md: var(--btn-h-md);
+  --height-btn-lg: var(--btn-h-lg);
+
+  --spacing-btn-px-sm: var(--btn-px-sm);
+  --spacing-btn-px-md: var(--btn-px-md);
+  --spacing-btn-px-lg: var(--btn-px-lg);
+
+  --size-btn-icon-sm: var(--btn-icon-sm);
+  --size-btn-icon-md: var(--btn-icon-md);
+  --size-btn-icon-lg: var(--btn-icon-lg);
+
+  --radius-btn-sm: var(--btn-radius-sm);
+  --radius-btn-md: var(--btn-radius-md);
+  --radius-btn-lg: var(--btn-radius-lg);
+  --radius-btn-full: var(--btn-radius-full);
 }
 
 /* =========================================================
@@ -159,6 +188,7 @@ h4 {
   ------------------------------ */
   --border: oklch(0.1957 0 0); /* #151515 (strong dividers) */
   --input: oklch(0.7508 0 0); /* #AEAEAE (input border) */
+  --on-dark-input: oklch(1 0 0); /* #FFFFFF (input border) */
   --ring: oklch(0.5485 0.1641 253.26); /* use brand blue for focus */
 
   /* -----------------------------

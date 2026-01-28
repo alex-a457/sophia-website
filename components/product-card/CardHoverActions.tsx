@@ -1,10 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
-import Image from "next/image";
-import { cn } from "@/lib/utils";
-import { IoCartOutline, IoSearch } from "react-icons/io5";
-import { AppButton } from "../shared/AppButton";
+import Image from 'next/image';
+import { IoCartOutline, IoSearch } from 'react-icons/io5';
+import { cn } from '@/lib/utils';
+import { AppButton } from '../shared/AppButton';
 
 type CardHoverActionsProps = {
   onAddToCart?: () => void;
@@ -19,8 +18,8 @@ type CardHoverActionsProps = {
 export default function CardHoverActions({
   onAddToCart,
   onQuickView,
-  hoverOverlaySrc="/latest-creation-hover.png",
-  hoverOverlayAlt = "Hover overlay",
+  hoverOverlaySrc = '/products/demo/latest-creation-hover.png',
+  hoverOverlayAlt = 'Hover overlay',
   className,
 }: CardHoverActionsProps) {
   const showButtons = !!onAddToCart || !!onQuickView;
@@ -28,22 +27,22 @@ export default function CardHoverActions({
   return (
     <div
       className={cn(
-        "absolute inset-0",
-        "pointer-events-none",
+        'absolute inset-0',
+        'pointer-events-none',
         // the container becomes visible on hover
-        "invisible translate-y-2 scale-95",
-        "transition-transform duration-200",
-        "group-hover:visible group-hover:translate-y-0 group-hover:scale-100",
-        className
+        'invisible translate-y-2 scale-95',
+        'transition-transform duration-200',
+        'group-hover:visible group-hover:translate-y-0 group-hover:scale-100',
+        className,
       )}
     >
       {/* OPTIONAL HOVER OVERLAY IMAGE */}
       {hoverOverlaySrc ? (
         <div
           className={cn(
-            "absolute inset-0",
-            "opacity-0 transition-opacity duration-200",
-            "group-hover:opacity-100"
+            'absolute inset-0',
+            'opacity-0 transition-opacity duration-200',
+            'group-hover:opacity-100',
           )}
         >
           <Image
@@ -69,8 +68,8 @@ export default function CardHoverActions({
                 iconOnly
                 tone="light"
                 radius="full"
-                onPress={onAddToCart}
-                className="h-12 w-12 min-w-0 p-0 shadow-sm transform-gpu"
+                onClick={onAddToCart}
+                className="h-12 w-12 min-w-0 transform-gpu p-0 shadow-sm"
                 aria-label="Add to cart"
               >
                 <IoCartOutline size={24} />
@@ -83,8 +82,8 @@ export default function CardHoverActions({
                 radius="full"
                 variant="glass"
                 tone="light"
-                onPress={onQuickView}
-                className="h-12 w-12 min-w-0 p-0 shadow-sm transform-gpu"
+                onClick={onQuickView}
+                className="h-12 w-12 min-w-0 transform-gpu p-0 shadow-sm"
                 aria-label="Quick view"
               >
                 <IoSearch size={24} />

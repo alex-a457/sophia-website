@@ -1,3 +1,13 @@
+const ShippingPage = () => {
+  return (
+    <div>
+      <h1>Shipping Page</h1>
+    </div>
+  );
+};
+
+export default ShippingPage;
+
 // "use client";
 
 // import Image from "next/image";
@@ -28,10 +38,10 @@
 //       >
 //         {/* LEFT : SHIPPING FORM */}
 //         <div className="w-[60%] md:w-full">
-//           <h1 className="text-[36px] lg:text-[32px] md:text-[28px] font-semibold text-[#151515]">
+//           <h1 className="text-[36px] lg:text-[32px] md:text-[28px] font-semibold text-foreground">
 //             Shipping Address
 //           </h1>
-//           <p className="mt-[10px] text-[18px] md:text-[16px] text-[#151515]">
+//           <p className="mt-[10px] text-[18px] md:text-[16px] text-foreground">
 //             Please provide the relevant information for your order.
 //           </p>
 

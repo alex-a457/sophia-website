@@ -48,7 +48,7 @@
 //           base: cn(
 //             "rounded-2xl",
 //             "w-[92vw] max-w-[605px]",
-//             "bg-white text-[#151515]",
+//             "bg-white text-foreground",
 //             className
 //           ),
 //           backdrop: "bg-black/40 backdrop-blur-sm",
@@ -65,7 +65,7 @@
 //                 className={cn(
 //                   "absolute right-4 top-4 z-10",
 //                   "grid h-8 w-8 place-items-center rounded-full",
-//                   "text-[#151515]/70",
+//                   "text-foreground/70",
 //                   "hover:bg-black/5 active:bg-black/10"
 //                 )}
 //               >
@@ -85,7 +85,7 @@
 //                 </h3>
 
 //                {/* Description */}
-//                 <p 
+//                 <p
 //                   className={cn(
 //                     "mx-auto mt-3 max-w-[460px] text-center",
 //                     "text-[#AEAEAE]",
@@ -105,7 +105,7 @@
 //                     variant="solid"
 //                     tone="dark"
 //                     radius="full"
-//                     onPress={handleContinue}
+//                     onClick={handleContinue}
 //                     className={cn(
 //                       "w-[401px] xs:w-full",
 //                       "h-11 sm:h-12",

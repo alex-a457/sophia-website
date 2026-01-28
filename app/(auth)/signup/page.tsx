@@ -1,3 +1,12 @@
+const SignupPage = () => {
+  return (
+    <div>
+      <h1>Signup Page</h1>
+    </div>
+  );
+};
+
+export default SignupPage;
 // "use client";
 
 // import React, { useEffect, useState } from "react";
@@ -67,11 +76,11 @@
 //           </div>
 
 //           {/* Heading */}
-//           <h1 className="text-[3rem] lg:text-[2.5rem] font-medium text-[#151515] text-center mb-2">
+//           <h1 className="text-[3rem] lg:text-[2.5rem] font-medium text-foreground text-center mb-2">
 //             Create an account
 //           </h1>
 
-//           <p className="text-[#151515] text-left mb-[3.5rem]">
+//           <p className="text-foreground text-left mb-[3.5rem]">
 //             Don’t have an account?{" "}
 //             <Link href="/login" className="hover:underline font-semibold">
 //               Sign In
@@ -209,7 +218,7 @@
 //                   >
 //                     <span className="text-[#AEAEAE]">
 //                       I agree to the{" "}
-//                       <span className="hover:!underline font-semibold text-[#151515]">
+//                       <span className="hover:!underline font-semibold text-foreground">
 //                         Terms & Conditions
 //                       </span>
 //                     </span>

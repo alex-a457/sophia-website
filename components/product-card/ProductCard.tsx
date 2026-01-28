@@ -1,28 +1,29 @@
 // ProductCard.tsx
-"use client";
+'use client';
 
-import React, { useMemo, useState } from "react";
-import { cn } from "@/lib/utils";
-import AppImage from "../shared/AppImage";
-import ProductColorSwatches, { ColorSwatchOption } from "./ProductColorSwatches";
-import { DEFAULT_COLOR_OPTIONS } from "@/config/defaultColors";
-import WishlistButton from "./WishlistButton";
-import CardHoverActions from "./CardHoverActions";
-
+import React, { useMemo, useState } from 'react';
+import { DEFAULT_COLOR_OPTIONS } from '@/config/defaultColors';
+import { cn } from '@/lib/utils';
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from '@/components/ui/tooltip';
+import AppImage from '../shared/AppImage';
+import CardHoverActions from './CardHoverActions';
+import ProductColorSwatches, {
+  ColorSwatchOption,
+} from './ProductColorSwatches';
+import WishlistButton from './WishlistButton';
 
 export type Price =
-  | { type: "sale"; original: number; sale: number; currency?: "USD" }
-  | { type: "startingAt"; amount: number; currency?: "USD" }
-  | { type: "range"; min: number; max: number; currency?: "USD" }
-  | { type: "regular"; amount: number; currency?: "USD" };
+  | { type: 'sale'; original: number; sale: number; currency?: 'USD' }
+  | { type: 'startingAt'; amount: number; currency?: 'USD' }
+  | { type: 'range'; min: number; max: number; currency?: 'USD' }
+  | { type: 'regular'; amount: number; currency?: 'USD' };
 
 type ProductCardProps = {
-  kind: "Ring" | "Earrings" | string;
+  kind: 'Ring' | 'Earrings' | string;
   title: string;
   imageSrc: string;
   isWished?: boolean;
@@ -42,22 +43,22 @@ type ProductCardProps = {
   className?: string;
 };
 
-function formatMoney(amount: number, currency: "USD" = "USD") {
-  return new Intl.NumberFormat("en-US", {
-    style: "currency",
+function formatMoney(amount: number, currency: 'USD' = 'USD') {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
     currency,
     maximumFractionDigits: 0,
   }).format(amount);
 }
 
 function PriceView({ price }: { price: Price }) {
-  const currency = price.currency ?? "USD";
+  const currency = price.currency ?? 'USD';
 
   switch (price.type) {
-    case "sale":
+    case 'sale':
       return (
         <div className="flex items-baseline gap-2">
-          <span className="text-lg text-[#696868] line-through">
+          <span className="text-lg text-muted-foreground line-through">
             {formatMoney(price.original, currency)}
           </span>
           <span className="text-lg font-medium text-[#EA4335]">
@@ -66,7 +67,7 @@ function PriceView({ price }: { price: Price }) {
         </div>
       );
 
-    case "startingAt":
+    case 'startingAt':
       return (
         <div className="text-lg font-medium text-[#696868]">
           <span className="text-[#696868]">Starting at: </span>
@@ -76,14 +77,15 @@ function PriceView({ price }: { price: Price }) {
         </div>
       );
 
-    case "range":
+    case 'range':
       return (
         <div className="text-lg font-medium text-[#696868]">
-          {formatMoney(price.min, currency)} - {formatMoney(price.max, currency)}
+          {formatMoney(price.min, currency)} -{' '}
+          {formatMoney(price.max, currency)}
         </div>
       );
 
-    case "regular":
+    case 'regular':
       return (
         <div className="text-lg font-medium text-[#696868]">
           {formatMoney(price.amount, currency)}
@@ -91,7 +93,6 @@ function PriceView({ price }: { price: Price }) {
       );
   }
 }
-
 
 export default function ProductCard({
   kind,
@@ -116,7 +117,7 @@ export default function ProductCard({
   const initialId =
     defaultColorId && options.some((o) => o.id === defaultColorId)
       ? defaultColorId
-      : options[0]?.id ?? "gold";
+      : (options[0]?.id ?? 'gold');
 
   const [internalColorId, setInternalColorId] = useState(initialId);
   const currentColorId = selectedColorId ?? internalColorId;
@@ -132,7 +133,7 @@ export default function ProductCard({
   }, [options]);
 
   return (
-    <div className={cn("w-full", className)}>
+    <div className={cn('w-full', className)}>
       {/* ✅ IMAGE AREA (ONLY THIS is group) */}
       <div className="group relative overflow-hidden rounded-2xl">
         <AppImage
@@ -140,9 +141,9 @@ export default function ProductCard({
           alt={title}
           aspectRatio={1}
           className={{
-            wrapperClass: "rounded-2xl",
+            wrapperClass: 'rounded-2xl',
             imageClass:
-              "rounded-2xl transition-transform duration-300 group-hover:scale-[1.03]",
+              'rounded-2xl transition-transform duration-300 group-hover:scale-[1.03]',
           }}
         />
 
@@ -173,7 +174,7 @@ export default function ProductCard({
         <div className="mt-1">
           <Tooltip>
             <TooltipTrigger>
-              <h3 className="max-w-full truncate text-2xl font-semibold text-[#151515]">
+              <h3 className="max-w-full truncate text-2xl font-semibold text-foreground">
                 {title}
               </h3>
             </TooltipTrigger>
