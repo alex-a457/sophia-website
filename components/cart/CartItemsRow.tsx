@@ -1,48 +1,31 @@
 // components/cart/CartItemRow.tsx
-"use client";
+'use client';
 
-import React, { useMemo } from "react";
-import AppImage from "@/components/ui/AppImage";
-import QuantityStepper from "./QuantityStepper";
-import { formatMoney } from "@/lib/money";
-import { Select, SelectItem, Checkbox } from "@heroui/react";
-import { useCartStore } from "@/lib/store/cart.store";
-import { CartLine } from "@/lib/types/cart";
-import { CiTrash } from "react-icons/ci";
+import { useMemo } from 'react';
+import { CiTrash } from 'react-icons/ci';
+import { formatMoney } from '@/lib/money';
+import { useCartStore } from '@/lib/store/cart.store';
+import { CartLine } from '@/lib/types/cart';
+import AppImage from '@/components/shared/AppImage';
+import QuantityStepper from './QuantityStepper';
 
 type Props = { line: CartLine };
 
 export default function CartItemRow({ line }: Props) {
-  const { incQty, decQty, removeLine, setSize, toggleGiftWrap } = useCartStore();
-  const sizes = useMemo(() => ["14 Cm", "16 Cm", "18 Cm"], []);
+  const { incQty, decQty, removeLine } = useCartStore();
+  const _sizes = useMemo(() => ['14 Cm', '16 Cm', '18 Cm'], []);
 
   return (
-    <div
-      className="
-        grid gap-5 py-7 items-center
-        grid-cols-[305px_1fr_auto]
-        sm:grid-cols-1
-      "
-    >
+    <div className="grid grid-cols-[305px_1fr_auto] items-center gap-5 py-7 sm:grid-cols-1">
       {/* Image */}
-      <div
-        className="
-          w-[305px]
-          sm:w-full sm:max-w-[343px]
-          sm:mx-auto
-        "
-      >
+      <div className="w-[305px] sm:mx-auto sm:w-full sm:max-w-[343px]">
         <AppImage
           src={line.imageSrc}
           alt={line.title}
           className={{
-            wrapperClass: `
-              rounded-2xl overflow-hidden
-              aspect-[1/1]
-              sm:aspect-[343/255]
-            `,
-            imageClass: "rounded-2xl object-contain p-1.5",
-            skeletonClass: "rounded-2xl",
+            wrapperClass: `aspect-[1/1] overflow-hidden rounded-2xl sm:aspect-[343/255]`,
+            imageClass: 'rounded-2xl object-contain p-1.5',
+            skeletonClass: 'rounded-2xl',
           }}
         />
       </div>
@@ -51,25 +34,25 @@ export default function CartItemRow({ line }: Props) {
       <div className="min-w-0 sm:mt-1">
         <div className="flex items-start justify-between gap-3">
           <div className="min-w-0">
-            <h2 className="truncate sm:text-2xl text-[28px] font-semibold">
+            <h2 className="truncate text-[28px] font-semibold sm:text-2xl">
               {line.title}
             </h2>
             {line.subtitle ? (
-              <div className="mt-3 text-base text-[#151515]">
+              <div className="mt-3 text-base text-foreground">
                 {line.subtitle}
               </div>
             ) : null}
           </div>
 
-          <div className="shrink-0 sm:text-2xl text-[32px] font-semibold text-[#151515]">
-            {formatMoney(line.price, line.currency ?? "USD")}
+          <div className="shrink-0 text-[32px] font-semibold text-foreground sm:text-2xl">
+            {formatMoney(line.price, line.currency ?? 'USD')}
           </div>
         </div>
 
         {/* dropdown + checkbox */}
         <div className="mt-4 flex flex-col gap-2">
-          <div className="max-w-[305px] sm:max-w-full mb-4">
-            <Select
+          <div className="mb-4 max-w-[305px] sm:max-w-full">
+            {/* <Select
               aria-label="Select size"
               selectedKeys={line.size ? new Set([line.size]) : new Set([])}
               onSelectionChange={(keys) => {
@@ -80,16 +63,16 @@ export default function CartItemRow({ line }: Props) {
               classNames={{
                 trigger:
                   "min-h-9 h-13 rounded-full bg-white border border-[#AEAEAE] shadow-none",
-                value: "text-lg text-[#151515]",
+                value: "text-lg text-foreground",
               }}
             >
               {sizes.map((s) => (
                 <SelectItem key={s}>{s}</SelectItem>
               ))}
-            </Select>
+            </Select> */}
           </div>
 
-          <Checkbox
+          {/* <Checkbox
             aria-label="Add gift wrapping"
             isSelected={!!line.giftWrap}
             color="default"
@@ -100,11 +83,11 @@ export default function CartItemRow({ line }: Props) {
             }}
           >
             Add Gift Wrapping
-          </Checkbox>
+          </Checkbox> */}
         </div>
 
         {/* qty + delete */}
-        <div className="xs:mt-7 mt-8 flex items-center gap-32 xs:gap-0 xs:justify-between">
+        <div className="xs:mt-7 xs:gap-0 xs:justify-between mt-8 flex items-center gap-32">
           <QuantityStepper
             value={line.qty}
             onDecrease={() => decQty(line.id)}
@@ -114,7 +97,7 @@ export default function CartItemRow({ line }: Props) {
           <button
             type="button"
             onClick={() => removeLine(line.id)}
-            className="inline-flex items-center gap-2 text-[#AEAEAE] hover:text-[#151515]"
+            className="inline-flex items-center gap-2 text-[#AEAEAE] hover:text-foreground"
             aria-label="Remove item"
           >
             <CiTrash size={32} />

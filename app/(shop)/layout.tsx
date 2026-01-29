@@ -1,7 +1,8 @@
-"use client";
-import React from "react";
-import Header from "@/components/headerComponents/Header";
-import Footer from "@/components/Footer";
+'use client';
+
+import React from 'react';
+import Footer from '@/components/shared/layout/Footer';
+import Header from '@/components/shared/layout/Header';
 
 export default function ShopLayout({
   children,
@@ -9,8 +10,8 @@ export default function ShopLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-gray-50">
-      <Header/>
+    <div className="min-h-screen">
+      <Header />
       <main className="flex-1">{children}</main>
       <Footer />
     </div>
