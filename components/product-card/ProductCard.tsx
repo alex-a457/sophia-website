@@ -57,11 +57,11 @@ function PriceView({ price }: { price: Price }) {
   switch (price.type) {
     case 'sale':
       return (
-        <div className="flex items-baseline gap-2">
-          <span className="text-lg text-muted-foreground line-through">
+        <div className="flex items-baseline gap-2 text-xs sm:text-lg">
+          <span className="text-muted-foreground line-through">
             {formatMoney(price.original, currency)}
           </span>
-          <span className="text-lg font-medium text-[#EA4335]">
+          <span className="text-danger-red font-medium">
             {formatMoney(price.sale, currency)}
           </span>
         </div>
@@ -69,8 +69,8 @@ function PriceView({ price }: { price: Price }) {
 
     case 'startingAt':
       return (
-        <div className="text-lg font-medium text-[#696868]">
-          <span className="text-[#696868]">Starting at: </span>
+        <div className="text-xs font-medium text-secondary-muted-foreground sm:text-lg">
+          <span className="text-secondary-muted-foreground">Starting at: </span>
           <span className="font-medium">
             {formatMoney(price.amount, currency)}
           </span>
@@ -79,7 +79,7 @@ function PriceView({ price }: { price: Price }) {
 
     case 'range':
       return (
-        <div className="text-lg font-medium text-[#696868]">
+        <div className="text-xs font-medium text-secondary-muted-foreground sm:text-lg">
           {formatMoney(price.min, currency)} -{' '}
           {formatMoney(price.max, currency)}
         </div>
@@ -87,7 +87,7 @@ function PriceView({ price }: { price: Price }) {
 
     case 'regular':
       return (
-        <div className="text-lg font-medium text-[#696868]">
+        <div className="text-xs font-medium text-secondary-muted-foreground sm:text-lg">
           {formatMoney(price.amount, currency)}
         </div>
       );
@@ -164,20 +164,21 @@ export default function ProductCard({
 
       {/* TEXT AREA */}
       <div className="pt-3">
-        <div className="flex items-center justify-between gap-3">
-          <div className="text-sm text-[#AEAEAE]">{kind}</div>
+        <div className="flex items-center justify-between gap-3 text-xs sm:text-sm">
+          <div className="text-muted-foreground">{kind}</div>
           {badgeText ? (
-            <span className="shrink-0 text-sm text-[#EA4335]">{badgeText}</span>
+            <span className="text-danger-red shrink-0">{badgeText}</span>
           ) : null}
         </div>
 
         <div className="mt-1">
           <Tooltip>
-            <TooltipTrigger>
-              <h3 className="max-w-full truncate text-2xl font-semibold text-foreground">
+            <TooltipTrigger asChild>
+              <h3 className="w-full max-w-full truncate text-sm font-semibold text-foreground md:text-xl lg:text-2xl">
                 {title}
               </h3>
             </TooltipTrigger>
+
             <TooltipContent>
               <p>{title}</p>
             </TooltipContent>

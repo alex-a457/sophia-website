@@ -1,5 +1,39 @@
 // config/site.config.ts
 
+export type EditorialHeroConfig = {
+  image: {
+    desktop: string;
+    tablet: string;
+    mobile: string;
+    alt: string;
+  };
+  title: string;
+  description?: string;
+  cta?: { label: string; href: string };
+};
+
+export type AboutStorySectionConfig = {
+  eyebrow: string;
+  title: string;
+  description?: string;
+  image: {
+    desktop: string;
+    tablet: string;
+    mobile: string;
+    alt: string;
+    aspectRatio?: number; // optional override, default provided
+  };
+};
+
+export type AboutCraftsmanshipSectionConfig = {
+  eyebrow: string;
+  title: string;
+  paragraphs: string[]; // 1..n paragraphs
+  image: string;
+  alt: string;
+  aspectRatio?: number; // optional
+};
+
 export type NavItem = {
   name: string;
   href: string;
@@ -33,6 +67,13 @@ export type SiteConfig = {
     signupHref: string;
   };
 
+  about: {
+    hero: EditorialHeroConfig;
+    storySection: AboutStorySectionConfig;
+    manifesto: EditorialHeroConfig;
+    craftsmanshipSection: AboutCraftsmanshipSectionConfig;
+  };
+
   // footer
   footer: {
     newsletter: {
@@ -53,6 +94,8 @@ export type SiteConfig = {
 
     bottomLinks: { label: string; href: string }[];
 
+    logoPath: string;
+
     copyrightText: string;
   };
 };
@@ -65,13 +108,13 @@ export const siteConfig: SiteConfig = {
 
   navigation: [
     { name: 'Home', href: '/' },
-    { name: 'Shop', href: '/shop' },
-    { name: 'Collections', href: '/collections' },
-    { name: 'Gems of the world', href: '/gems' },
+    { name: 'Shop', href: '/our-product' },
+    { name: 'Collections', href: '/loyalty-points' },
+    { name: 'Gems of the world', href: '/saved-items' },
     { name: 'Signature Collection', href: '/signature' },
     { name: 'Engagement Collections', href: '/engagement' },
     { name: 'Blog', href: '/blog' },
-    { name: 'About Us', href: '/about' },
+    { name: 'About Us', href: '/about-us' },
     { name: 'Contact Us', href: '/contact' },
   ],
 
@@ -81,6 +124,58 @@ export const siteConfig: SiteConfig = {
     signupLabel: 'Sign Up',
     cartHref: '/cart',
     signupHref: '/signup',
+  },
+  about: {
+    hero: {
+      image: {
+        desktop: '/brand/hero/about-us-hero-desk.svg',
+        tablet: '/brand/hero/about-us-hero-tab.svg',
+        mobile: '/brand/hero/about-us-hero-mob.svg',
+        alt: 'Luxury jewelry craftsmanship',
+      },
+
+      title:
+        'A Celebration of Timeless Elegance, Meets Meaningful Stories Woven',
+      description: `At Lunara, we create more than jewelry—we craft heirlooms of enduring beauty, designed to honor life's most cherished memories and to inspire the dreams of tomorrow.`,
+    },
+
+    storySection: {
+      eyebrow: 'The Journey of Lunara',
+      title:
+        'Inspired by the radiant glow of the moon and the brilliance of the stars, Lunara was founded to create treasures that transcend time, blending modern elegance with a touch of classic sophistication.',
+      description: `At Lunara, we craft jewelry that transcends time—blending modern elegance with classic sophistication. Every piece is a celebration of life's most precious moments, designed to tell your story with timeless beauty and radiant craftsmanship.`,
+      image: {
+        desktop: '/about/about-story-section-desk.svg',
+        tablet: '/about/about-story-section-tab.svg',
+        mobile: '/about/about-story-section-mob.svg',
+        alt: 'Luxury jewelry craftsmanship',
+        aspectRatio: 16 / 7,
+      },
+    },
+
+    manifesto: {
+      image: {
+        desktop: '/about/about-manifesto-desk.svg',
+        tablet: '/about/about-manifesto-tab.svg',
+        mobile: '/about/about-manifesto-tab.svg',
+        alt: 'Vision manifesto background',
+      },
+      title:
+        'Our vision is to redefine luxury by creating jewelry that transcends time, inspires connection, and celebrates individuality.',
+      description: `Our mission is simple yet profound: to craft meaningful pieces that honor life’s milestones, reflect the unique stories of those who wear them, and contribute positively to the world. With every creation, we strive to blend artistry with purpose, ensuring that beauty and responsibility go hand in hand.`,
+    },
+
+    craftsmanshipSection: {
+      eyebrow: 'The Art of Craftsmanship',
+      title: 'Crafted to Perfection, Inspired\nby Eternity',
+      paragraphs: [
+        `At Lunara, every piece begins as an idea—a vision of elegance, precision, and meaning. Our artisans transform this vision into reality through a meticulous process that combines time-honored techniques with modern innovation.`,
+        `From selecting the finest materials to the final polishing touch, each step reflects our unwavering dedication to excellence. It's not just about creating jewelry; it's about crafting heirlooms that tell stories, preserve memories, and radiate beauty for generations to come.`,
+      ],
+      image: '/about/about-craftsman-section.svg',
+      alt: 'Jewelry craftsmanship close-up',
+      aspectRatio: 4 / 3,
+    },
   },
 
   footer: {
@@ -142,6 +237,8 @@ export const siteConfig: SiteConfig = {
       },
       { label: 'X', href: 'https://x.com/', iconSrc: '/footer/x-button.svg' },
     ],
+
+    logoPath: '/brand/logo/brand.svg',
 
     bottomLinks: [
       { label: 'Privacy Policy', href: '/privacy' },

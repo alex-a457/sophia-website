@@ -1,6 +1,7 @@
 'use client';
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import Link from 'next/link';
 import { siteConfig } from '@/config/site.config';
 import { Input } from '@/components/ui/input';
@@ -87,7 +88,7 @@ const Footer = () => {
       <div className="w-full border-b border-primary opacity-10" />
 
       {/* Bottom row */}
-      <div className="my-8 flex w-full flex-wrap items-center justify-between gap-6">
+      <div className="my-8 flex w-full flex-col justify-between gap-8 sm:flex-row sm:items-center">
         {/* Social */}
         <div className="flex gap-4">
           {footer.socialLinks.map((social) => (
@@ -113,6 +114,12 @@ const Footer = () => {
           ))}
         </div>
 
+        <Image
+          src="/brand/logo/dark-brand.svg"
+          alt={siteConfig.brandName}
+          height={50}
+          width={170}
+        />
         {/* Bottom links + copyright */}
         <div className="flex flex-wrap items-center gap-6 text-muted-foreground">
           {footer.bottomLinks.map((l) => (
@@ -124,8 +131,6 @@ const Footer = () => {
               {l.label}
             </Link>
           ))}
-
-          <span className="opacity-70">{footer.copyrightText}</span>
         </div>
       </div>
     </footer>

@@ -24,7 +24,7 @@ const LoyaltyPointsCard = ({
   return (
     <div className="w-full max-w-[884px]">
       {/* DESKTOP & TABLET: Horizontal layout (above 639px) */}
-      <div className="flex items-start gap-4 sm:hidden lg:gap-5">
+      <div className="hidden items-start gap-5 sm:flex lg:gap-4">
         {/* Image */}
         <div className="w-[140px] shrink-0">
           <AppImage
@@ -40,35 +40,35 @@ const LoyaltyPointsCard = ({
 
         {/* Content - grows to fill */}
         <div className="flex min-w-0 flex-1 flex-col justify-between self-stretch">
-          <div className="flex flex-col gap-3 sm:gap-1">
-            <h2 className="text-2xl leading-tight font-semibold text-foreground md:text-xl">
+          <div className="flex flex-col gap-1 sm:gap-3">
+            <h2 className="text-xl leading-tight font-semibold text-foreground md:text-2xl">
               {productInfo.title}
             </h2>
 
-            <p className="text-lg leading-relaxed text-foreground md:text-sm">
+            <p className="text-sm leading-relaxed text-foreground md:text-lg">
               {productInfo.description}
             </p>
           </div>
 
-          <p className="text-lg text-foreground md:text-sm">
+          <p className="text-sm text-foreground md:text-lg">
             {formatDate(productInfo.date)}
           </p>
         </div>
 
         {/* Points - fixed width, top aligned */}
         <div className="flex w-[75px] shrink-0 flex-col items-end gap-2">
-          <p className="text-right text-base text-foreground md:text-sm">
+          <p className="text-right text-sm text-foreground md:text-base">
             Total Point
           </p>
 
-          <p className="text-[28px] font-semibold text-foreground md:text-xl">
+          <p className="text-xl font-semibold text-foreground md:text-[28px]">
             +{productInfo.points}
           </p>
         </div>
       </div>
 
       {/* MOBILE: Different layout (≤639px) */}
-      <div className="hidden flex-col sm:flex">
+      <div className="flex flex-col sm:hidden">
         {/* Image + Content Row */}
         <div className="flex items-start gap-5">
           <div className="w-[118px] shrink-0">

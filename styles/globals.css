@@ -52,6 +52,15 @@ h4 {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
 
+  --text-28: 28px;
+  --text-28--line-height: 36px;
+
+  --text-32: 32px;
+  --text-32--line-height: 40px;
+
+  --text-22: 22px;
+  --text-22--line-height: 28px;
+
   /* Surface containers */
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
@@ -79,6 +88,7 @@ h4 {
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
+  --color-on-dark-input: var(--on-dark-input);
 
   /* Data viz */
   --color-chart-1: var(--chart-1);
@@ -181,8 +191,7 @@ h4 {
   /* -----------------------------
      States (danger)
   ------------------------------ */
-  --destructive: oklch(0.577 0.245 27.325);
-
+  --destructive: oklch(0.6257 0.2058 29.08); /* #EA4335 */
   /* -----------------------------
      Borders + Inputs + Focus
   ------------------------------ */

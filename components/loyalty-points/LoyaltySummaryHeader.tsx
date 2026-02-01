@@ -49,18 +49,18 @@ const LoyaltySummaryHeader: React.FC<LoyaltySummaryHeaderProps> = ({
 
   return (
     <div>
-      <div className="xs:flex-col flex items-start justify-between sm:gap-5">
-        <div className="flex items-end gap-4 sm:gap-2.5 md:flex-col md:items-start md:gap-4.5">
+      <div className="flex flex-col items-start justify-between gap-5 sm:flex-row sm:gap-0">
+        <div className="flex flex-col items-start gap-2.5 sm:gap-4.5 md:flex-row md:items-end md:gap-4">
           {/* Left */}
           <div className="flex flex-col gap-1 text-foreground">
-            <p className="text-lg sm:text-base">You Have</p>
+            <p className="text-base sm:text-lg">You Have</p>
 
-            <p className="text-[44px] font-semibold sm:text-2xl lg:text-4xl">
+            <p className="text-32 font-semibold md:text-4xl xl:text-[44px]">
               {points} Loyalty Point{points !== 1 ? 's' : ''}
             </p>
 
             {expiryText && (
-              <p className="text-lg text-[#AEAEAE] sm:text-base">
+              <p className="text-base text-muted-foreground sm:text-lg">
                 {expiryText}
               </p>
             )}
@@ -76,7 +76,7 @@ const LoyaltySummaryHeader: React.FC<LoyaltySummaryHeaderProps> = ({
             </span>
 
             {nextTierText && (
-              <p className="text-lg text-[#AEAEAE] lg:text-base">
+              <p className="text-base text-muted-foreground lg:text-lg">
                 {nextTierText}
               </p>
             )}
@@ -86,8 +86,9 @@ const LoyaltySummaryHeader: React.FC<LoyaltySummaryHeaderProps> = ({
         <AppButton
           variant="solid"
           size="md"
+          radius="full"
           onClick={onAddMore}
-          className="xs:mt-0 xs:w-full mt-8.5 font-semibold sm:text-sm"
+          className="mt-0 w-full font-semibold sm:mt-8.5 sm:w-auto sm:text-sm"
         >
           Add More Point
         </AppButton>
