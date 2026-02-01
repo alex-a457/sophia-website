@@ -23,12 +23,15 @@ export default function WishlistButton({
       onClick={onToggle}
       aria-label={`${isActive ? 'Wishlist is Active' : 'Wishlist is Inactive'}`}
       className={cn(
-        'absolute top-3 right-3 z-10 h-12 w-12 min-w-0 border-[#AEAEAE] p-0 shadow-sm md:top-2 md:right-2 md:h-10 md:w-10',
-        isActive ? 'text-[#EA4335]' : 'text-[#AEAEAE]',
+        'absolute top-1 right-1 z-10 h-8 w-8 border-input p-0 shadow-sm sm:top-3 sm:right-3 md:h-9 md:w-9 xl:h-12 xl:w-12',
         className,
       )}
     >
-      {isActive ? <IoHeart size={24} /> : <IoHeartOutline size={24} />}
+      {isActive ? (
+        <IoHeart className="text-base text-destructive sm:text-base xl:text-xl" />
+      ) : (
+        <IoHeartOutline className="text-base text-muted-foreground sm:text-base xl:text-xl" />
+      )}
     </AppButton>
   );
 }

@@ -1,6 +1,5 @@
-'use client';
-
-import React from 'react';
+import Footer from '@/components/shared/layout/Footer';
+import Header from '@/components/shared/layout/Header';
 
 // import Header from "@/components/headerComponents/Header";
 // import Footer from "@/components/Footer";
@@ -11,10 +10,10 @@ export default function PagesLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* <Header/> */}
+    <div className="min-h-screen">
+      <Header variant="overlay" isDarkbg={true} />
       <main className="flex-1">{children}</main>
-      {/* <Footer />  */}
+      <Footer />
     </div>
   );
 }

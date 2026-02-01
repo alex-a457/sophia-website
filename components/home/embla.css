@@ -3,8 +3,15 @@
   margin: auto;
   /* --slide-height: 19rem; */
   --slide-spacing: 2rem;
-  --slide-size: 80%;
+  --slide-size: 100%;
 }
+
+@media (min-width: 1024px) {
+  .embla {
+    --slide-size: 80%;
+  }
+}
+
 .embla__viewport {
   overflow: hidden;
 }
@@ -18,9 +25,7 @@
   min-width: 0;
   padding-left: var(--slide-spacing);
 }
-/* .embla__slide__number {
 
-} */
 .embla__controls {
   display: grid;
   grid-template-columns: auto 1fr;

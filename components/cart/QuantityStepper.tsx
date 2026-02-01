@@ -1,7 +1,6 @@
 // components/cart/QuantityStepper.tsx
 'use client';
 
-import React from 'react';
 import { cn } from '@/lib/utils';
 import { AppButton } from '@/components/shared/AppButton';
 
@@ -43,7 +42,7 @@ export default function QuantityStepper({
           '[&>span]:grid [&>span]:h-full [&>span]:w-full [&>span]:place-items-center',
           canDec
             ? 'border-[#151515] bg-[#151515] text-white hover:bg-[#151515]/95 active:bg-[#151515]/90'
-            : 'border-[#AEAEAE] bg-transparent text-[#AEAEAE] hover:bg-black/4 active:bg-black/8',
+            : 'border-input bg-transparent text-muted-foreground hover:bg-black/4 active:bg-black/8',
         )}
       >
         <span className={iconBase} aria-hidden>

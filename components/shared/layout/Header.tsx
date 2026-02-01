@@ -3,9 +3,10 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Menu } from 'lucide-react';
+import { Menu, Search } from 'lucide-react';
 import { IoClose } from 'react-icons/io5';
 import { siteConfig } from '@/config/site.config';
+import { cn } from '@/lib/utils';
 import { Input } from '@/components/ui/input';
 import { AppButton } from '../AppButton';
 
@@ -41,43 +42,65 @@ function NavLinks({
   );
 }
 
-const Header = () => {
+const Header = ({
+  variant = 'sticky',
+  isDarkbg = false,
+}: {
+  variant?: 'sticky' | 'overlay';
+  isDarkbg?: boolean;
+}) => {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
-  const [isDarkbg, _setDarkbg] = useState(false);
 
   const toggleSidebar = () => setSidebarOpen(!isSidebarOpen);
 
   return (
     <header
-      className={`sticky top-0 z-50 w-full px-6 py-7 lg:px-20 ${
-        isDarkbg ? 'bg-transparent' : 'bg-background'
-      }`}
+      className={cn(
+        'z-50 w-full px-6 py-7 lg:px-20',
+        variant === 'sticky' && 'sticky top-0',
+        variant === 'overlay' && 'absolute top-0 left-0',
+        isDarkbg ? 'bg-transparent' : 'bg-background',
+      )}
     >
       <div>
         <div className="flex items-center justify-between">
           <div className="hidden lg:block">
-            <Input
-              className={`max-w-[244px] rounded-none border-0 ${
-                isDarkbg
-                  ? 'border-b-on-dark-input border-b'
-                  : 'border-b border-b-input/20'
-              }`}
-              placeholder={siteConfig.header.searchPlaceholder}
-            />
+            <div className="relative w-full">
+              <Input
+                className={`w-full rounded-none border-0 pr-3 pl-10 ${
+                  isDarkbg
+                    ? 'border-b border-b-on-dark-input'
+                    : 'border-b border-b-input/60'
+                }`}
+                placeholder=""
+                aria-label="Search"
+              />
+              <Search
+                className={`pointer-events-none absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 ${
+                  isDarkbg ? 'text-on-dark-input' : 'text-muted-foreground'
+                }`}
+              />
+            </div>
           </div>
 
           {/* Logo */}
-          <Image
-            src={isDarkbg ? siteConfig.logoPath : siteConfig.logoPathDark}
-            alt={siteConfig.brandName}
-            height={50}
-            width={170}
-          />
-
+          <Link href="/">
+            <Image
+              src={isDarkbg ? siteConfig.logoPath : siteConfig.logoPathDark}
+              alt={siteConfig.brandName}
+              height={50}
+              width={170}
+            />
+          </Link>
           {/* Hamburger Menu (Mobile) */}
           <div className="lg:hidden">
             <button
-              className="rounded-full border border-primary p-2 text-foreground"
+              className={cn(
+                'rounded-full border p-2',
+                isDarkbg
+                  ? 'border-on-dark-input text-on-dark-foreground'
+                  : 'border-border text-foreground',
+              )}
               onClick={toggleSidebar}
             >
               <Menu name="menu" size={18} />

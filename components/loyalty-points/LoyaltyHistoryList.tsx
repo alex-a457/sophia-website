@@ -28,7 +28,11 @@ const LoyaltyHistoryList = ({
   }
 
   if (transactions.length === 0) {
-    return <div className="py-8 text-center text-gray-500">{emptyMessage}</div>;
+    return (
+      <div className="py-8 text-center text-secondary-muted-foreground">
+        {emptyMessage}
+      </div>
+    );
   }
 
   return (
@@ -36,7 +40,7 @@ const LoyaltyHistoryList = ({
       {transactions.map((transaction) => (
         <React.Fragment key={transaction.id}>
           <LoyaltyPointsCard productInfo={transaction} />
-          <div className="h-px border-b border-[#E5E5E5]" />
+          <div className="h-px border-b border-border/20" />
         </React.Fragment>
       ))}
     </div>

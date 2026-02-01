@@ -1,18 +1,24 @@
-import React from "react";
-import { CiStar } from "react-icons/ci";
-import { TiStarFullOutline } from "react-icons/ti";
+import { CiStar } from 'react-icons/ci';
+import { TiStarFullOutline } from 'react-icons/ti';
 
-const RatingStars = (data: any) => {
+type RatingStarsProps = {
+  rating: number;
+};
+
+const RatingStars = ({ rating }: RatingStarsProps) => {
   return (
     <div className="flex items-center">
       {[...Array(5)].map((_, index) =>
-        index < data.rating ? (
+        index < rating ? (
           <TiStarFullOutline
             key={index}
-            className="w-[1.1rem] h-[1.1rem] text-black"
+            className="h-[1.1rem] w-[1.1rem] text-foreground"
           />
         ) : (
-          <CiStar key={index} className="w-[1.1rem] h-[1.1rem] text-black" />
+          <CiStar
+            key={index}
+            className="h-[1.1rem] w-[1.1rem] text-foreground"
+          />
         ),
       )}
     </div>
