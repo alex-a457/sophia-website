@@ -1,124 +1,124 @@
 // components/cart/CartItemRow.tsx
-"use client";
+'use client';
 
-import React, { useMemo } from "react";
-import AppImage from "@/components/ui/AppImage";
-import QuantityStepper from "./QuantityStepper";
-import { formatMoney } from "@/lib/money";
-import { Select, SelectItem, Checkbox } from "@heroui/react";
-import { useCartStore } from "@/lib/store/cart.store";
-import { CartLine } from "@/lib/types/cart";
-import { CiTrash } from "react-icons/ci";
+import * as React from 'react';
+import { CiTrash } from 'react-icons/ci';
+import { formatMoney } from '@/lib/money';
+import { useCartStore } from '@/lib/store/cart.store';
+import type { CartLine } from '@/lib/types/cart';
+import { Checkbox } from '@/components/ui/checkbox';
+// ✅ shadcn/ui
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import AppImage from '@/components/shared/AppImage';
+import QuantityStepper from './QuantityStepper';
 
 type Props = { line: CartLine };
 
 export default function CartItemRow({ line }: Props) {
-  const { incQty, decQty, removeLine, setSize, toggleGiftWrap } = useCartStore();
-  const sizes = useMemo(() => ["14 Cm", "16 Cm", "18 Cm"], []);
+  // ✅ include setSize + toggleGiftWrap from store (adjust names if yours differ)
+  const { incQty, decQty, removeLine, setSize, toggleGiftWrap } =
+    useCartStore();
+
+  const sizes = React.useMemo(() => ['14 cm', '16 cm', '18 cm'], []);
 
   return (
-    <div
-      className="
-        grid gap-5 py-7 items-center
-        grid-cols-[305px_1fr_auto]
-        sm:grid-cols-1
-      "
-    >
+    <div className="grid grid-cols-1 items-center gap-5 sm:grid-cols-[250px_1fr_auto]">
       {/* Image */}
-      <div
-        className="
-          w-[305px]
-          sm:w-full sm:max-w-[343px]
-          sm:mx-auto
-        "
-      >
+      <div className="mx-auto w-80 sm:max-w-[250px]">
         <AppImage
           src={line.imageSrc}
           alt={line.title}
           className={{
-            wrapperClass: `
-              rounded-2xl overflow-hidden
-              aspect-[1/1]
-              sm:aspect-[343/255]
-            `,
-            imageClass: "rounded-2xl object-contain p-1.5",
-            skeletonClass: "rounded-2xl",
+            wrapperClass: `aspect-square overflow-hidden rounded-2xl sm:aspect-250/250`,
+            imageClass: 'rounded-2xl object-contain p-1.5',
+            skeletonClass: 'rounded-2xl',
           }}
         />
       </div>
 
       {/* Details */}
-      <div className="min-w-0 sm:mt-1">
-        <div className="flex items-start justify-between gap-3">
+      <div className="min-w-0 py-2">
+        <div className="flex items-start justify-between">
           <div className="min-w-0">
-            <h2 className="truncate sm:text-2xl text-[28px] font-semibold">
+            <h2 className="truncate text-xl font-semibold sm:text-2xl">
               {line.title}
             </h2>
             {line.subtitle ? (
-              <div className="mt-3 text-base text-[#151515]">
+              <div className="mt-3 text-sm text-foreground sm:text-base">
                 {line.subtitle}
               </div>
             ) : null}
           </div>
 
-          <div className="shrink-0 sm:text-2xl text-[32px] font-semibold text-[#151515]">
-            {formatMoney(line.price, line.currency ?? "USD")}
-          </div>
+          <button
+            type="button"
+            onClick={() => removeLine(line.id)}
+            className="inline-flex items-center gap-2 text-muted-foreground hover:text-foreground"
+            aria-label="Remove item"
+          >
+            <CiTrash size={24} />
+          </button>
         </div>
 
-        {/* dropdown + checkbox */}
-        <div className="mt-4 flex flex-col gap-2">
-          <div className="max-w-[305px] sm:max-w-full mb-4">
+        {/* Select + Checkbox */}
+        <div className="mt-4 flex flex-col gap-4">
+          {/* ✅ Select (shadcn) */}
+          <div className="w-full sm:max-w-[170px]">
             <Select
-              aria-label="Select size"
-              selectedKeys={line.size ? new Set([line.size]) : new Set([])}
-              onSelectionChange={(keys) => {
-                const v = Array.from(keys)[0] as string | undefined;
-
-                if (v) setSize(line.id, v);
-              }}
-              classNames={{
-                trigger:
-                  "min-h-9 h-13 rounded-full bg-white border border-[#AEAEAE] shadow-none",
-                value: "text-lg text-[#151515]",
-              }}
+              value={line.size ?? ''}
+              onValueChange={(v) => setSize(line.id, v)}
             >
-              {sizes.map((s) => (
-                <SelectItem key={s}>{s}</SelectItem>
-              ))}
+              <SelectTrigger className="h-[52px] min-h-9 w-full gap-8 rounded-full border border-input bg-background text-lg text-muted-foreground shadow-none focus:ring-0 focus:ring-offset-0">
+                <SelectValue
+                  className="text-lg text-muted-foreground"
+                  placeholder="Select size"
+                />
+              </SelectTrigger>
+
+              <SelectContent>
+                {sizes.map((s) => (
+                  <SelectItem key={s} value={s}>
+                    {s}
+                  </SelectItem>
+                ))}
+              </SelectContent>
             </Select>
           </div>
 
-          <Checkbox
-            aria-label="Add gift wrapping"
-            isSelected={!!line.giftWrap}
-            color="default"
-            onValueChange={() => toggleGiftWrap(line.id)}
-            classNames={{
-              label: "text-base text-[#AEAEAE]",
-              wrapper: "rounded-md",
-            }}
-          >
-            Add Gift Wrapping
-          </Checkbox>
+          {/* ✅ Checkbox (shadcn) */}
+          <div className="flex items-center gap-3">
+            <Checkbox
+              id={`gift-wrap-${line.id}`}
+              checked={!!line.giftWrap}
+              onCheckedChange={() => toggleGiftWrap(line.id)}
+              className=""
+              aria-label="Add gift wrapping"
+            />
+            <label
+              htmlFor={`gift-wrap-${line.id}`}
+              className="text-base text-muted-foreground"
+            >
+              Add Gift Wrapping
+            </label>
+          </div>
         </div>
 
         {/* qty + delete */}
-        <div className="xs:mt-7 mt-8 flex items-center gap-32 xs:gap-0 xs:justify-between">
+        <div className="mt-6 flex items-center justify-between">
           <QuantityStepper
             value={line.qty}
             onDecrease={() => decQty(line.id)}
             onIncrease={() => incQty(line.id)}
           />
-
-          <button
-            type="button"
-            onClick={() => removeLine(line.id)}
-            className="inline-flex items-center gap-2 text-[#AEAEAE] hover:text-[#151515]"
-            aria-label="Remove item"
-          >
-            <CiTrash size={32} />
-          </button>
+          <div className="shrink-0 text-28 font-semibold text-foreground">
+            {formatMoney(line.price, line.currency ?? 'USD')}
+          </div>
         </div>
       </div>
 

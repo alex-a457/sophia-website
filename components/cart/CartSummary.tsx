@@ -1,13 +1,12 @@
 // components/cart/CartSummary.tsx
-"use client";
+'use client';
 
-import React from "react";
-import { formatMoney } from "@/lib/money";
-import { AppButton } from "@/components/ui/AppButton";
-import { cn } from "@/lib/utils";
-import { useCartStore } from "@/lib/store/cart.store";
-import ClaimDiscountModal from "./ClaimDiscountModal";
-import PurchaseSuccessModal from "./PurchaseSuccessModal";
+import { formatMoney } from '@/lib/money';
+import { useCartStore } from '@/lib/store/cart.store';
+import { cn } from '@/lib/utils';
+import { AppButton } from '@/components/shared/AppButton';
+import ClaimDiscountModal from './ClaimDiscountModal';
+import PurchaseSuccessModal from './PurchaseSuccessModal';
 
 export default function CartSummary({ className }: { className?: string }) {
   const { deliveryFee, taxes, getSubtotal, getTotal } = useCartStore();
@@ -16,67 +15,61 @@ export default function CartSummary({ className }: { className?: string }) {
   const total = getTotal();
 
   return (
-    <aside className={cn("w-full", className)}>
+    <aside className={cn('w-full', className)}>
       <div className="rounded-2xl">
-        <h3 className="xs:text-[28px] text-[32px] leading-[40px] font-semibold text-#151515">
+        <h3 className="text-28 font-semibold text-foreground">
           Detail Summary
         </h3>
 
-        <div className="xs:mt-6 mt-13 space-y-2 xs:text-xl text-2xl">
-          <div className="flex items-center justify-between text-#151515">
-            <span className="text-#151515">Subtotal Price</span>
-            <span className="text-#151515">{formatMoney(subtotal)}</span>
+        <div className="mt-12 space-y-2 text-xl sm:text-22">
+          <div className="flex items-center justify-between text-foreground">
+            <span>Subtotal Price</span>
+            <span>{formatMoney(subtotal)}</span>
           </div>
 
-          <div className="flex items-center justify-between text-#151515">
-            <span className="text-#151515">Price Delivery</span>
-            <span className="text-#151515">
-              {deliveryFee === 0 ? "Free" : formatMoney(deliveryFee)}
-            </span>
+          <div className="flex items-center justify-between text-foreground">
+            <span>Price Delivery</span>
+            <span>{deliveryFee === 0 ? 'Free' : formatMoney(deliveryFee)}</span>
           </div>
 
-          <div className="flex items-center justify-between text-#151515">
-            <span className="text-#151515">Taxes</span>
-            <span className="text-#151515">{formatMoney(taxes)}</span>
+          <div className="flex items-center justify-between text-foreground">
+            <span>Taxes</span>
+            <span>{formatMoney(taxes)}</span>
           </div>
 
-          <div className="xs:pt-10 pt-16" />
+          <div className="my-8 h-px border-b border-border" />
 
-          <div className="flex items-center justify-between">
-            <span className="xs:text-[28px] text-[32px] leading-[40px] font-semibold text-#151515">
-              Total
-            </span>
-            <span className="xs:text-[28px] text-[32px] leading-[40px] font-semibold text-#151515">
-              {formatMoney(total)}
-            </span>
+          <div className="flex items-center justify-between text-28 font-semibold text-foreground">
+            <span>Total</span>
+            <span>{formatMoney(total)}</span>
           </div>
         </div>
 
-        <div className="xs:mt-6 mt-8 grid grid-cols-2 xs:grid-cols-1 gap-3">
-        <ClaimDiscountModal />
+        <div className="mt-8 grid grid-cols-1 gap-3 sm:grid-cols-2">
+          <ClaimDiscountModal />
           <PurchaseSuccessModal
-      defaultOpen = {false}
-      onContinueShopping={() => {}}
-    />
+            defaultOpen={false}
+            onContinueShopping={() => {}}
+          />
           <AppButton
             type="button"
             variant="outline"
             tone="muted"
             radius="full"
             size="sm"
-            className="h-12 text-lg font-normal text-[#AEAEAE]"
+            className="h-12 text-base font-normal text-muted-foreground sm:text-lg"
           >
             Redeem promo
           </AppButton>
         </div>
 
-        <div className="xs:mt-6 mt-6">
+        <div className="mt-6">
           <AppButton
             fullWidth
             radius="full"
             variant="solid"
             tone="dark"
-            className="h-12 text-lg font-semibold"
+            className="h-12 text-base font-semibold sm:text-lg"
           >
             Checkout
           </AppButton>

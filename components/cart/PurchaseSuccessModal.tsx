@@ -1,9 +1,10 @@
-"use client";
+'use client';
 
-import React from "react";
-import { Modal, ModalContent, ModalBody, useDisclosure } from "@heroui/react";
-import { AppButton } from "@/components/ui/AppButton";
-import { cn } from "@/lib/utils";
+import * as React from 'react';
+import { cn } from '@/lib/utils';
+// shadcn/ui
+import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { AppButton } from '../shared/AppButton';
 
 type PurchaseSuccessModalProps = {
   trigger?: React.ReactNode;
@@ -22,106 +23,101 @@ export default function PurchaseSuccessModal({
   onContinueShopping,
   defaultOpen = false,
 }: PurchaseSuccessModalProps) {
-  const { isOpen, onOpen, onOpenChange } = useDisclosure({
-    defaultOpen,
-  });
+  const [open, setOpen] = React.useState(defaultOpen);
 
   const handleContinue = () => {
     onContinueShopping?.();
-    onOpenChange();
+    setOpen(false);
   };
 
   return (
     <>
       {trigger ? (
-        <button type="button" onClick={onOpen} className="inline-block">
+        <button
+          type="button"
+          onClick={() => setOpen(true)}
+          className="inline-block"
+        >
           {trigger}
         </button>
       ) : null}
 
-      <Modal
-        isOpen={isOpen}
-        onOpenChange={onOpenChange}
-        placement="center"
-        backdrop="blur"
-        hideCloseButton
-        classNames={{
-          base: cn(
-            "rounded-2xl",
-            "w-[92vw] max-w-[605px]",
-            "bg-white text-[#151515]",
-            className
-          ),
-          backdrop: "bg-black/40 backdrop-blur-sm",
-        }}
-      >
-        <ModalContent>
-          {(onClose) => (
-            <div className="relative">
-              {/* close button */}
-              <button
-                type="button"
-                onClick={onClose}
-                aria-label="Close"
+      <Dialog open={open} onOpenChange={setOpen}>
+        <DialogContent
+          className={cn(
+            'rounded-2xl',
+            'w-[92vw] max-w-[605px]',
+            'bg-white text-foreground',
+            'p-0',
+            // hide default shadcn close button
+            '[&>button]:hidden',
+            className,
+          )}
+        >
+          <div className="relative">
+            {/* close button */}
+            <button
+              type="button"
+              onClick={() => setOpen(false)}
+              aria-label="Close"
+              className={cn(
+                'absolute top-4 right-4 z-10',
+                'grid h-8 w-8 place-items-center rounded-full',
+                'text-foreground/70',
+                'hover:bg-black/5 active:bg-black/10',
+              )}
+            >
+              ✕
+            </button>
+
+            <div className="px-6 pt-10 pb-7 sm:px-10 sm:pt-12 sm:pb-9">
+              {/* Title */}
+              <h3
                 className={cn(
-                  "absolute right-4 top-4 z-10",
-                  "grid h-8 w-8 place-items-center rounded-full",
-                  "text-[#151515]/70",
-                  "hover:bg-black/5 active:bg-black/10"
+                  'text-center',
+                  'xs:text-[32px] text-4xl',
+                  'font-medium',
                 )}
               >
-                ✕
-              </button>
+                Thank You for Your Purchase!
+              </h3>
 
-              <ModalBody className="px-6 pb-7 pt-10 sm:px-10 sm:pb-9 sm:pt-12">
-                {/* Title */}
-                <h3
+              {/* Description */}
+              <p
+                className={cn(
+                  'mx-auto mt-3 max-w-[460px] text-center',
+                  'text-[#AEAEAE]',
+                  'xs:text-xs text-sm',
+                )}
+              >
+                Your payment was successful, and your Lumina piece is now on its
+                way to you. We are thrilled to be a part of your jewelry and
+                can’t wait for you to experience the timeless elegance of our
+                jewelry.
+              </p>
+
+              {/* CTA */}
+              <div className="mt-8 flex justify-center sm:mt-7">
+                <AppButton
+                  type="button"
+                  variant="solid"
+                  tone="dark"
+                  radius="full"
+                  onClick={handleContinue}
                   className={cn(
-                    "text-center",
-                    "text-4xl xs:text-[32px]",
-                    "font-medium",
+                    'xs:w-full w-[401px]',
+                    'h-11 sm:h-12',
+                    'px-8',
+                    'text-sm',
                   )}
                 >
-                  Thank You for Your Purchase!
-                </h3>
-
-               {/* Description */}
-                <p 
-                  className={cn(
-                    "mx-auto mt-3 max-w-[460px] text-center",
-                    "text-[#AEAEAE]",
-                    "text-sm xs:text-xs"
-                  )}
-                >
-                  Your payment was successful, and your Lumina piece is now on its
-                  way to you. We are thrilled to be a part of your jewelry and
-                  can’t wait for you to experience the timeless elegance of our
-                  jewelry.
-                </p>
-
-                {/* CTA */}
-                <div className="mt-8 flex justify-center sm:mt-7">
-                  <AppButton
-                    type="button"
-                    variant="solid"
-                    tone="dark"
-                    radius="full"
-                    onPress={handleContinue}
-                    className={cn(
-                      "w-[401px] xs:w-full",
-                      "h-11 sm:h-12",
-                      "px-8",
-                      "text-sm "
-                    )}
-                  >
-                    Continue Shopping
-                  </AppButton>
-                </div>
-              </ModalBody>
+                  Continue Shopping
+                </AppButton>
+              </div>
             </div>
-          )}
-        </ModalContent>
-      </Modal>
+          </div>
+        </DialogContent>
+      </Dialog>
     </>
   );
 }

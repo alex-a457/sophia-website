@@ -1,12 +1,10 @@
-import "@/styles/globals.css";
-import { Metadata, Viewport } from "next";
-import clsx from "clsx";
-
-import { Providers } from "./providers";
-import { siteConfig } from "@/config/site";
-
-import { Playfair_Display } from "next/font/google";
-import localFont from "next/font/local";
+import '@/styles/globals.css';
+import { Metadata, Viewport } from 'next';
+import { Playfair_Display } from 'next/font/google';
+import localFont from 'next/font/local';
+import clsx from 'clsx';
+import { siteConfig } from '@/config/site';
+import { Providers } from './providers';
 
 export const metadata: Metadata = {
   title: {
@@ -15,42 +13,42 @@ export const metadata: Metadata = {
   },
   description: siteConfig.description,
   icons: {
-    icon: "/logo.svg",
+    icon: '/logo.svg',
   },
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: "(prefers-color-scheme: light)", color: "white" },
-    { media: "(prefers-color-scheme: dark)", color: "black" },
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: 'black' },
   ],
 };
 
 const playfair = Playfair_Display({
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  variable: "--font-playfair",
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-playfair',
 });
 
 const switzer = localFont({
   src: [
     {
-      path: "../public/fonts/switzer/Switzer-Regular.woff2",
-      weight: "400",
-      style: "normal",
+      path: '../public/fonts/switzer/Switzer-Regular.woff2',
+      weight: '400',
+      style: 'normal',
     },
     {
-      path: "../public/fonts/switzer/Switzer-Medium.woff2",
-      weight: "500",
-      style: "normal",
+      path: '../public/fonts/switzer/Switzer-Medium.woff2',
+      weight: '500',
+      style: 'normal',
     },
     {
-      path: "../public/fonts/switzer/Switzer-Bold.woff2",
-      weight: "700",
-      style: "normal",
+      path: '../public/fonts/switzer/Switzer-Bold.woff2',
+      weight: '700',
+      style: 'normal',
     },
   ],
-  variable: "--font-switzer", // ✅ THIS WAS MISSING
+  variable: '--font-switzer', // ✅ THIS WAS MISSING
 });
 
 export default function RootLayout({
@@ -62,13 +60,13 @@ export default function RootLayout({
     <html suppressHydrationWarning lang="en">
       <body
         className={clsx(
-          "min-h-screen text-black bg-white antialiased",
+          'min-h-screen antialiased',
           switzer.variable,
-          playfair.variable
+          playfair.variable,
         )}
       >
         <Providers>{children}</Providers>
       </body>
-    </html> 
+    </html>
   );
 }
