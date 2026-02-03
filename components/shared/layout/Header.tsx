@@ -5,7 +5,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Menu, Search } from 'lucide-react';
 import { IoClose } from 'react-icons/io5';
-import { siteConfig } from '@/config/site.config';
+import { brandConfig } from '@/config/site/brand.config';
+import { headerConfig } from '@/config/site/header.config';
+import { navigationConfig } from '@/config/site/navigation.config';
 import { cn } from '@/lib/utils';
 import { Input } from '@/components/ui/input';
 import { AppButton } from '../AppButton';
@@ -25,7 +27,7 @@ function NavLinks({
 }: NavLinksProps) {
   return (
     <div className={className}>
-      {siteConfig.navigation.map((item) => (
+      {navigationConfig.map((item) => (
         <Link
           key={item.name}
           href={item.href}
@@ -86,8 +88,8 @@ const Header = ({
           {/* Logo */}
           <Link href="/">
             <Image
-              src={isDarkbg ? siteConfig.logoPath : siteConfig.logoPathDark}
-              alt={siteConfig.brandName}
+              src={isDarkbg ? brandConfig.logoPath : brandConfig.logoPathDark}
+              alt={brandConfig.brandName}
               height={50}
               width={170}
             />
@@ -109,24 +111,24 @@ const Header = ({
 
           {/* Cart and SignUp Button (Desktop) */}
           <div className="hidden items-center gap-5 lg:flex">
-            <Link href={siteConfig.header.cartHref}>
+            <Link href={headerConfig.cartHref}>
               <AppButton
                 variant="outline"
                 tone={isDarkbg ? 'light' : 'dark'}
                 className="border-none shadow-none"
               >
-                {siteConfig.header.cartLabel} (0)
+                {headerConfig.cartLabel} (0)
               </AppButton>
             </Link>
 
-            <Link href={siteConfig.header.signupHref}>
+            <Link href={headerConfig.signupHref}>
               <AppButton
                 variant="outline"
                 tone={isDarkbg ? 'light' : 'dark'}
                 radius="full"
                 className="px-8 py-2"
               >
-                {siteConfig.header.signupLabel}
+                {headerConfig.signupLabel}
               </AppButton>
             </Link>
           </div>
@@ -149,8 +151,8 @@ const Header = ({
         <div className="fixed inset-y-0 right-0 flex w-3/4 flex-col gap-4 bg-sidebar p-6 text-sidebar-foreground sm:w-1/2">
           <div className="mt-8 flex items-center justify-between md:mt-14">
             <Image
-              src={siteConfig.logoPath}
-              alt={siteConfig.brandName}
+              src={brandConfig.logoPath}
+              alt={brandConfig.brandName}
               height={50}
               width={170}
             />
@@ -161,7 +163,7 @@ const Header = ({
 
           <Input
             className="my-8 w-full rounded-full border-white"
-            placeholder={siteConfig.header.searchPlaceholder}
+            placeholder={headerConfig.searchPlaceholder}
           />
 
           {/* Sidebar Navigation */}
@@ -174,25 +176,25 @@ const Header = ({
 
           {/* Bottom Cart & SignUp */}
           <div className="mt-auto flex w-full gap-4">
-            <Link href={siteConfig.header.cartHref} className="w-full">
+            <Link href={headerConfig.cartHref} className="w-full">
               <AppButton
                 variant="outline"
                 tone="light"
                 radius="full"
                 className="w-full px-4 py-2"
               >
-                {siteConfig.header.cartLabel} (0)
+                {headerConfig.cartLabel} (0)
               </AppButton>
             </Link>
 
-            <Link href={siteConfig.header.signupHref} className="w-full">
+            <Link href={headerConfig.signupHref} className="w-full">
               <AppButton
                 variant="outline"
                 tone="light"
                 radius="full"
                 className="w-full px-4 py-2"
               >
-                {siteConfig.header.signupLabel}
+                {headerConfig.signupLabel}
               </AppButton>
             </Link>
           </div>

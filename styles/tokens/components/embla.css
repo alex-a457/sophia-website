@@ -1,0 +1,68 @@
+/* Embla Carousel Styles */
+.embla {
+  margin: auto;
+  --slide-spacing: 2rem;
+  --slide-size: 100%;
+}
+
+@media (min-width: 1024px) {
+  .embla {
+    --slide-size: 80%;
+  }
+}
+
+.embla__viewport {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  touch-action: pan-y pinch-zoom;
+  margin-left: calc(var(--slide-spacing) * -1);
+}
+
+.embla__slide {
+  flex: 0 0 var(--slide-size);
+  padding-left: var(--slide-spacing);
+}
+
+/* Removed custom CSS for dots, as it is now handled by Tailwind CSS */
+
+/* Removed .embla__dots and .embla__dot styling */
+.embla__controls {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  justify-content: space-between;
+  gap: 1.2rem;
+  margin-top: 1.8rem;
+}
+
+.embla__buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.embla__button {
+  background-color: transparent;
+  border: 0.2rem solid var(--detail-medium-contrast);
+  width: 3.6rem;
+  height: 3.6rem;
+  border-radius: 50%;
+  color: var(--text-body);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: rotate(0deg);
+  cursor: pointer;
+}
+
+.embla__button--disabled {
+  color: var(--detail-high-contrast);
+}
+
+.embla__button__svg {
+  width: 35%;
+  height: 35%;
+}

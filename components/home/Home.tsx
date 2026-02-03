@@ -1,15 +1,15 @@
 'use client';
 
 import { useState } from 'react';
-import { SEASONAL_COLLECTION_DATA } from '@/config/seasonal-data.config';
+import { SEASONAL_COLLECTION_DATA } from '@/config/site/seasonal-data.config';
 import { demo } from '../cart/PeopleAlsoBought';
 import ProductCard from '../product-card/ProductCard';
 import ProductSection from '../product-card/ProductSection';
 import { AppButton } from '../shared/AppButton';
+import BannerSlider from '../shared/layout/embla/BannerSlider';
 import SeasonalCollectionBannerSection from '../shared/layout/SeasonalCollectionBannerSection';
 import AboutHomeSection from './AboutHomeSection';
 import AdBanner from './AdBanner';
-import BannerSlider from './BannerSlider';
 import DiscoverMatchSection from './DiscoverMatchSection';
 
 const Home = () => {

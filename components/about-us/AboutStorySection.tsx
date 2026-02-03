@@ -1,6 +1,6 @@
 'use client';
 
-import { siteConfig } from '@/config/site.config';
+import { aboutConfig } from '@/config/site/about.config';
 import { cn } from '@/lib/utils';
 import ResponsiveAppImage from '@/components/shared/ResponsiveAppImage';
 
@@ -9,7 +9,7 @@ type Props = {
 };
 
 export default function AboutStorySection({ className }: Props) {
-  const data = siteConfig.about.storySection;
+  const data = aboutConfig.storySection;
 
   return (
     <section className={cn('w-full', className)}>
@@ -22,7 +22,7 @@ export default function AboutStorySection({ className }: Props) {
           </p>
 
           {/* Big title */}
-          <h2 className="font-playfair text-32 leading-[120%] font-medium tracking-[-0.02em] text-foreground sm:text-[40px] lg:mb-2 lg:text-5xl">
+          <h2 className="font-playfair text-32 leading-[120%] font-medium tracking-[-0.02em] text-foreground sm:text-40 lg:mb-2 lg:text-5xl">
             {data.title}
           </h2>
 

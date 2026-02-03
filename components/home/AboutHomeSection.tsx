@@ -35,7 +35,7 @@ export default function AboutHomeSection({ className }: Props) {
           </p>
 
           {/* main heading */}
-          <h1 className="font-playfair mt-3 text-2xl leading-[1.15] md:text-[40px] xl:text-5xl">
+          <h1 className="font-playfair mt-3 text-2xl leading-[1.15] md:text-40 xl:text-5xl">
             We believe that jewelry is more than just an accessory it’s a
             reflection of individuality, emotion, and heritage.
           </h1>

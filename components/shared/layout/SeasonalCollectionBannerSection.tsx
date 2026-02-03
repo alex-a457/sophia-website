@@ -70,7 +70,7 @@ export default function SeasonalCollectionBannerSection({
 
           {/* ✅ Text content stays above */}
           <div className="relative z-10 w-full">
-            <h2 className="font-playfair text-2xl leading-tight sm:text-[40px] lg:text-5xl">
+            <h2 className="font-playfair text-2xl leading-tight sm:text-40 lg:text-5xl">
               {data.title}
             </h2>
 

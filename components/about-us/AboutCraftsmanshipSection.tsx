@@ -1,13 +1,13 @@
 'use client';
 
-import { siteConfig } from '@/config/site.config';
+import { aboutConfig } from '@/config/site/about.config';
 import { cn } from '@/lib/utils';
 import AppImage from '@/components/shared/AppImage';
 
 type Props = { className?: string };
 
 export default function AboutCraftsmanshipSection({ className }: Props) {
-  const data = siteConfig.about.craftsmanshipSection;
+  const data = aboutConfig.craftsmanshipSection;
 
   return (
     <section className={cn('w-full bg-background', className)}>
@@ -19,7 +19,7 @@ export default function AboutCraftsmanshipSection({ className }: Props) {
               {data.eyebrow}
             </p>
 
-            <h2 className="font-playfair text-32 leading-[120%] font-medium tracking-[-0.02em] whitespace-pre-line text-foreground sm:text-[40px] lg:text-5xl">
+            <h2 className="font-playfair text-32 leading-[120%] font-medium tracking-[-0.02em] whitespace-pre-line text-foreground sm:text-40 lg:text-5xl">
               {data.title}
             </h2>
 
