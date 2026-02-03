@@ -1,8 +1,8 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
 @custom-variant dark (&:is(.dark *));
-@import '../components/home/embla.css';
 @import './tokens/components/buttons.tokens.css';
+@import './tokens/components/embla.css';
 
 body {
   font-family: var(--font-switzer);
@@ -15,13 +15,6 @@ h4 {
   font-family: var(--font-playfair);
 }
 
-.swiper-pagination-bullet {
-  background-color: #ccc; /* Inactive dots */
-}
-
-.swiper-pagination-bullet-active {
-  background-color: #000; /* Active dot */
-}
 /* -----------------------------
    Utilities
 ------------------------------ */
@@ -60,6 +53,9 @@ h4 {
 
   --text-22: 22px;
   --text-22--line-height: 28px;
+
+  --text-40: 40px;
+  --text-40--line-height: 48px;
 
   /* Surface containers */
   --color-card: var(--card);

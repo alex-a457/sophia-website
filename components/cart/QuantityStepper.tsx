@@ -51,7 +51,7 @@ export default function QuantityStepper({
       </AppButton>
 
       {/* VALUE */}
-      <div className="min-w-[18px] text-center text-[28px] font-semibold text-foreground">
+      <div className="min-w-[18px] text-center text-28 font-semibold text-foreground">
         {value}
       </div>
 

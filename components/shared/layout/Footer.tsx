@@ -3,13 +3,14 @@
 import React, { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { siteConfig } from '@/config/site.config';
+import { brandConfig } from '@/config/site/brand.config';
+import { footerConfig } from '@/config/site/footer.config';
 import { Input } from '@/components/ui/input';
 import { AppButton } from '../AppButton';
 import AppImage from '../AppImage';
 
 const Footer = () => {
-  const { footer } = siteConfig;
+  const footer = footerConfig;
   const [email, setEmail] = useState('');
 
   return (
@@ -17,7 +18,7 @@ const Footer = () => {
       <div className="my-12 grid w-full grid-cols-1 gap-x-4 gap-y-12 px-5 pt-12 pb-8 sm:pt-4 lg:grid-cols-2 lg:gap-x-12 xl:my-24">
         {/* Newsletter */}
         <div className="flex w-full max-w-[550px] flex-col gap-6 text-left">
-          <h2 className="text-[32px] font-medium text-foreground md:text-2xl md:text-[40px] xl:text-5xl">
+          <h2 className="text-32 font-medium text-foreground md:text-2xl lg:text-40 xl:text-5xl">
             {footer.newsletter.title}
           </h2>
 
@@ -116,7 +117,7 @@ const Footer = () => {
 
         <Image
           src="/brand/logo/dark-brand.svg"
-          alt={siteConfig.brandName}
+          alt={brandConfig.brandName}
           height={50}
           width={170}
         />

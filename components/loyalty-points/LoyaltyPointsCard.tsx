@@ -61,7 +61,7 @@ const LoyaltyPointsCard = ({
             Total Point
           </p>
 
-          <p className="text-xl font-semibold text-foreground md:text-[28px]">
+          <p className="text-xl font-semibold text-foreground md:text-28">
             +{productInfo.points}
           </p>
         </div>

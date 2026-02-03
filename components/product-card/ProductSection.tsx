@@ -66,7 +66,7 @@ export default function ProductSection({
                 className={cn('max-w-4xl', headerAlign === 'left' && 'w-full')}
               >
                 {title && (
-                  <h2 className="font-playfair text-32 leading-tight sm:text-[40px] xl:text-5xl">
+                  <h2 className="font-playfair text-32 leading-tight sm:text-40 xl:text-5xl">
                     {title}
                   </h2>
                 )}

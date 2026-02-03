@@ -1,4 +1,4 @@
-import { siteConfig } from '@/config/site.config';
+import { aboutConfig } from '@/config/site/about.config';
 import EditorialHeroSection from '../shared/layout/HeroSection';
 import AboutCraftsmanshipSection from './AboutCraftsmanshipSection';
 import AboutStorySection from './AboutStorySection';
@@ -7,10 +7,10 @@ import BrandManifestoSection from './BrandManifestoSection';
 const AboutUs = () => {
   return (
     <div>
-      <EditorialHeroSection data={siteConfig.about.hero} />
+      <EditorialHeroSection data={aboutConfig.hero} />
       <AboutStorySection />
       <AboutCraftsmanshipSection />
-      <BrandManifestoSection data={siteConfig.about.manifesto} />
+      <BrandManifestoSection data={aboutConfig.manifesto} />
     </div>
   );
 };

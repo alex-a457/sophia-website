@@ -1,4 +1,4 @@
-import { SEASONAL_COLLECTION_DATA } from '@/config/seasonal-data.config';
+import { SEASONAL_COLLECTION_DATA } from '@/config/site/seasonal-data.config';
 import SeasonalCollectionBannerSection from '../shared/layout/SeasonalCollectionBannerSection';
 import OurProductHeroSection from './OurProductHeroSection';
 import OurProductSection from './OurProductSection';

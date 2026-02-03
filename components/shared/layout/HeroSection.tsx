@@ -27,7 +27,7 @@ export default function EditorialHeroSection({ data, className }: Props) {
     <ImageOverlaySection
       image={data.image}
       priority
-      heightClass="h-screen"
+      heightClass="h-[85vh]"
       overlayClass="bg-black/30"
       contentWrapClass="items-center justify-center text-center"
       className={className}
