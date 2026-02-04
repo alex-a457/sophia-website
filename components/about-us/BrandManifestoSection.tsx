@@ -29,7 +29,7 @@ export default function BrandManifestoSection({ data, className }: Props) {
         className="overflow-hidden rounded-2xl"
       >
         <div className="w-full px-6 text-on-dark-foreground sm:px-8 xl:max-w-5xl xl:px-0">
-          <h2 className="font-playfair text-2xl leading-tight sm:text-[40px] lg:text-5xl">
+          <h2 className="font-playfair text-2xl leading-tight sm:text-40 lg:text-5xl">
             {data.title}
           </h2>
 

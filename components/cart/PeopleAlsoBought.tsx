@@ -164,11 +164,11 @@ export default function PeopleAlsoBought() {
   return (
     <section className="mt-20 xl:mt-24">
       <div className="mb-6 flex flex-col gap-3 md:mb-16 md:gap-6 xl:mb-8">
-        <h2 className="xs:hidden text-center text-32 font-medium text-foreground md:text-[40px] xl:text-5xl">
+        <h2 className="xs:hidden text-center text-32 font-medium text-foreground md:text-40 xl:text-5xl">
           People also bought
         </h2>
 
-        <h2 className="xs:block hidden text-center text-32 font-medium text-foreground md:text-[40px] xl:text-5xl">
+        <h2 className="xs:block hidden text-center text-32 font-medium text-foreground md:text-40 xl:text-5xl">
           Related Creations
         </h2>
 
